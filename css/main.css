@@ -626,6 +626,7 @@ pre .javascript .function {
 html,
 body {
   height: 100%;
+  color: #197bac;
 }
 .container {
   position: relative;
@@ -679,7 +680,7 @@ body {
   }
 }
 .headband {
-  height: 3px;
+  height: 0px;
   background: #222;
 }
 .header-inner {
@@ -699,7 +700,7 @@ body {
   display: inline-block;
   padding: 0 40px;
   color: #fff;
-  background: #222;
+  background: #197bac;
   border-bottom: none;
   font-family: Lato, "PingFang SC", "Microsoft YaHei", sans-serif;
 }
@@ -722,7 +723,7 @@ body {
 .site-subtitle {
   margin-top: 10px;
   font-size: 13px;
-  color: #999;
+  color: #555;
 }
 .use-motion .brand {
   opacity: 0;
@@ -785,6 +786,7 @@ body {
   }
 }
 .menu .menu-item a {
+  color: #197bac;
   display: block;
   font-size: 13px;
   text-transform: capitalize;
@@ -796,7 +798,7 @@ body {
   transition-delay: 0s;
 }
 .menu .menu-item a:hover {
-  border-bottom-color: #222;
+  border-bottom-color: #197bac;
 }
 .use-motion .menu-item {
   opacity: 0;
@@ -866,13 +868,12 @@ body {
   top: 0;
   bottom: 0;
   z-index: 1040;
-  box-shadow: inset 0 2px 6px #000;
-  background: #222;
+  background: #197bac;
   -webkit-transform: translateZ(0);
 }
 .sidebar a {
-  color: #999;
-  border-bottom-color: #555;
+  color: #8cd6ef;
+  border-bottom-color: #ddd;
 }
 .sidebar a:hover {
   color: #eee;
@@ -890,7 +891,7 @@ body {
 .sidebar-inner {
   position: relative;
   padding: 20px 10px;
-  color: #999;
+  color: #8cd6ef;
   text-align: center;
 }
 .site-author-image {
@@ -898,8 +899,8 @@ body {
   margin: 0 auto;
   max-width: 96px;
   height: auto;
-  border: 2px solid #333;
   padding: 2px;
+  border-radius: 50px;
 }
 .site-author-name {
   margin: 5px 0 0;
@@ -908,7 +909,7 @@ body {
 .site-description {
   margin-top: 5px;
   font-size: 14px;
-  color: #555;
+  color: #8cd6ef;
 }
 .site-state {
   overflow: hidden;
@@ -917,7 +918,7 @@ body {
 .site-state-item {
   display: inline-block;
   padding: 0 15px;
-  border-left: 1px solid #333;
+  border-left: 1px solid #fff;
 }
 .site-state-item:first-child {
   border-left: none;
@@ -962,7 +963,7 @@ body {
   vertical-align: middle;
   margin-right: 10px;
   margin-bottom: 10px;
-  border-bottom-color: #555;
+  border-bottom-color: #fff;
   font-size: 13px;
 }
 .links-of-author a:before {
@@ -973,7 +974,7 @@ body {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffe9ff;
+  background: #5b1c6c;
 }
 .sidebar-nav {
   margin: 0 0 20px;
@@ -1042,13 +1043,13 @@ body {
   display: block;
 }
 .post-toc .nav .active > a {
-  color: #fff;
+  color: #ccc;
 }
 .post-toc .nav .active-current > a {
-  color: #87daff;
+  color: #fff;
 }
 .post-toc .nav .active-current > a:hover {
-  color: #87daff;
+  color: #fff;
 }
 .post-toc-indicator {
   height: 20px;
@@ -1176,8 +1177,8 @@ body {
   padding: 0 20px;
   font-size: 15px;
   color: #fff;
-  background: #222;
-  border: 2px solid #222;
+  background: #197bac;
+  border: 2px solid #197bac;
   text-decoration: none;
   transition-property: background-color;
   transition-duration: 0.2s;
@@ -1185,8 +1186,8 @@ body {
   transition-delay: 0s;
 }
 .btn:hover {
-  border-color: #222;
-  color: #222;
+  border-color: #197bac;
+  color: #197bac;
   background: #fff;
 }
 .btn-bar {
@@ -1251,7 +1252,7 @@ body {
 .posts-expand .post-title-link {
   display: inline-block;
   position: relative;
-  color: #555;
+  color: #1c7db0;
   border-bottom: none;
   line-height: 1.2;
   vertical-align: top;
@@ -1263,7 +1264,7 @@ body {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #000;
+  background-color: #1c7db0;
   visibility: hidden;
   transform: scaleX(0);
   transition-duration: 0.2s;
