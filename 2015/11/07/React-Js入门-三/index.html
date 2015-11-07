@@ -53,24 +53,26 @@
 
 
 
-<meta name="description" content="接触前端两年了也用过bootstrap、Angular.Js等框架，最近一直听别人再说React.Js，于是便打算学习一下。
-我主要参考了: React中文文档 (http://reactjs.cn/)              ReactJs入门教程 (http://www.cnblogs.com/Leo_wl/p/4489197.html)
-React.Js 简介React 起源于 Faceb">
+<meta name="description" content="React.Js小结关于ReactJS今天就先学习到这里了，下面来总结一下，主要有以下几点：
+　　1、ReactJs是基于组件化的开发，所以最终你的页面应该是由若干个小组件组成的大组件。
+　　2、可以通过属性，将值传递到组件内部，同理也可以通过属性将内部的结果传递到父级组件(留给大家研究)；要对某些值的变化做DOM操作的，要把这些值放到state中。
+　　3、为组件添加外部css样式时，类名应该写">
 <meta property="og:type" content="article">
-<meta property="og:title" content="React.Js 入门(一)">
-<meta property="og:url" content="http://liuzhenkn.gitHub.io/2015/11/05/ReactJs入门-一/index.html">
+<meta property="og:title" content="React.Js (三)">
+<meta property="og:url" content="http://liuzhenkn.gitHub.io/2015/11/07/React-Js入门-三/index.html">
 <meta property="og:site_name" content="执凉's blog">
-<meta property="og:description" content="接触前端两年了也用过bootstrap、Angular.Js等框架，最近一直听别人再说React.Js，于是便打算学习一下。
-我主要参考了: React中文文档 (http://reactjs.cn/)              ReactJs入门教程 (http://www.cnblogs.com/Leo_wl/p/4489197.html)
-React.Js 简介React 起源于 Faceb">
-<meta property="og:image" content="http://liuzhenkn.gitHub.io/images/20151105/react.png">
-<meta property="og:image" content="http://liuzhenkn.gitHub.io/images/20151105/component.png">
-<meta property="og:updated_time" content="2015-11-06T13:56:51.178Z">
+<meta property="og:description" content="React.Js小结关于ReactJS今天就先学习到这里了，下面来总结一下，主要有以下几点：
+　　1、ReactJs是基于组件化的开发，所以最终你的页面应该是由若干个小组件组成的大组件。
+　　2、可以通过属性，将值传递到组件内部，同理也可以通过属性将内部的结果传递到父级组件(留给大家研究)；要对某些值的变化做DOM操作的，要把这些值放到state中。
+　　3、为组件添加外部css样式时，类名应该写">
+<meta property="og:image" content="http://liuzhenkn.gitHub.io/images/20151107/colorp.jpg">
+<meta property="og:updated_time" content="2015-11-07T11:37:56.830Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="React.Js 入门(一)">
-<meta name="twitter:description" content="接触前端两年了也用过bootstrap、Angular.Js等框架，最近一直听别人再说React.Js，于是便打算学习一下。
-我主要参考了: React中文文档 (http://reactjs.cn/)              ReactJs入门教程 (http://www.cnblogs.com/Leo_wl/p/4489197.html)
-React.Js 简介React 起源于 Faceb">
+<meta name="twitter:title" content="React.Js (三)">
+<meta name="twitter:description" content="React.Js小结关于ReactJS今天就先学习到这里了，下面来总结一下，主要有以下几点：
+　　1、ReactJs是基于组件化的开发，所以最终你的页面应该是由若干个小组件组成的大组件。
+　　2、可以通过属性，将值传递到组件内部，同理也可以通过属性将内部的结果传递到父级组件(留给大家研究)；要对某些值的变化做DOM操作的，要把这些值放到state中。
+　　3、为组件添加外部css样式时，类名应该写">
 
 
 
@@ -82,7 +84,7 @@ React.Js 简介React 起源于 Faceb">
   };
 </script>
 
-  <title> React.Js 入门(一) | 执凉's blog </title>
+  <title> React.Js (三) | 执凉's blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -241,7 +243,7 @@ React.Js 简介React 起源于 Faceb">
             
             
               
-                React.Js 入门(一)
+                React.Js (三)
               
             
           </h1>
@@ -250,8 +252,8 @@ React.Js 简介React 起源于 Faceb">
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2015-11-05T12:44:36+08:00" content="2015-11-05">
-              2015-11-05
+            <time itemprop="dateCreated" datetime="2015-11-07T19:27:23+08:00" content="2015-11-07">
+              2015-11-07
             </time>
           </span>
 
@@ -276,8 +278,8 @@ React.Js 简介React 起源于 Faceb">
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/11/05/ReactJs入门-一/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/11/05/ReactJs入门-一/" itemprop="commentsCount"></span>
+                <a href="/2015/11/07/React-Js入门-三/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/11/07/React-Js入门-三/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -296,23 +298,27 @@ React.Js 简介React 起源于 Faceb">
       
 
       
-        <span itemprop="articleBody"><p><img src="/images/20151105/react.png" alt=""><br>接触前端两年了也用过bootstrap、Angular.Js等框架，最近一直听别人再说React.Js，于是便打算学习一下。</p>
-<p>我主要参考了: React中文文档 (<a href="http://reactjs.cn/" target="_blank" rel="external">http://reactjs.cn/</a>)<br>              ReactJs入门教程 (<a href="http://www.cnblogs.com/Leo_wl/p/4489197.html" target="_blank" rel="external">http://www.cnblogs.com/Leo_wl/p/4489197.html</a>)</p>
-<h3 id="React-Js_简介">React.Js 简介</h3><p>React 起源于 Facebook 的内部项目，因为该公司对市场上所有 JavaScript MVC 框架，都不满意，就决定自己写一套，用来架设 Instagram 的网站。做出来以后，发现这套东西很好用，就在2013年5月开源了。由于 React 的设计思想极其独特，属于革命性创新，性能出众，代码逻辑却非常简单。所以，越来越多的人开始关注和使用，认为它可能是将来 Web 开发的主流工具。<br><a id="more"></a></p>
-<h3 id="对React-Js的认识及优点">对React.Js的认识及优点</h3><h4 id="误区">误区</h4><ul>
-<li>React不是一个完整的MVC框架，最多可以认为是MVC中的V（View），甚至React并不非常认可MVC开发模式；</li>
-<li>React的服务器端Render能力只能算是一个锦上添花的功能，并不是其核心出发点，事实上React官方站点几乎没有提及其在服务器端的应用；</li>
-<li>有人拿React和Web Component相提并论，但两者并不是完全的竞争关系，你完全可以用React去开发一个真正的Web Component；</li>
-<li>React不是一个新的模板语言，JSX只是一个表象，没有JSX的React也能工作。<br>好吧，其实我还暂时有些不理解上面的部分所讲，先复制过来，以后遇到再来看。</li>
-</ul>
-<h4 id="组件化">组件化</h4><p>所谓组件，即封装起来的具有独立功能的UI部件。React推荐以组件的方式去重新思考UI构成，将UI上每一个功能相对独立的模块定义成组件，然后将小的组件通过组合或者嵌套的方式构成大的组件，最终完成整体UI的构建。<br>在React中，你按照界面模块自然划分的方式来组织和编写你的代码，对于评论界面而言，整个UI是一个通过小组件构成的大组件，每个组件只关心自己部分的逻辑，彼此独立。<br><img src="/images/20151105/component.png" alt=""></p>
-<p>React认为一个组件应该具有如下特征：<br>（1）可组合（Composeable）：一个组件易于和其它组件一起使用，或者嵌套在另一个组件内部。如果一个组件内部创建了另一个组件，那么说父组件拥有（own）它创建的子组件，通过这个特性，一个复杂的UI可以拆分成多个简单的UI组件；<br>（2）可重用（Reusable）：每个组件都是具有独立功能的，它可以被使用在多个UI场景；<br>（3）可维护（Maintainable）：每个小的组件仅仅包含自身的逻辑，更容易被理解和维护；</p>
-<h3 id="下载React-Js">下载React.Js</h3><p>ReactJs下载非常简单，下载地址<a href="http://facebook.github.io/react/downloads.html。" target="_blank" rel="external">http://facebook.github.io/react/downloads.html。</a><br>下载完成后，我么看到的是一个压缩包。解压后，我们新建一个html文件，引用react.js和JSXTransformer.js这两个js文件。html模板如下(js路径改成自己的)。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;script src=<span class="string">"build/react.js"</span>&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script src=<span class="string">"build/JSXTransformer.js"</span>&gt;&lt;/script&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line">    &lt;div id=<span class="string">"container"</span>&gt;&lt;/div&gt;</span><br><span class="line">    &lt;script <span class="built_in">type</span>=<span class="string">"text/jsx"</span>&gt;</span><br><span class="line">      // ** Our code goes here! **</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
-<p>这里大家可能会奇怪，<strong>为什么script的type是text/jsx,这是因为 React 独有的 JSX 语法，跟 JavaScript 不兼容</strong>。凡是使用 JSX 的地方，都要加上 type=”text/jsx” 。 其次，React 提供两个库： react.js 和 JSXTransformer.js ，它们必须首先加载。其中，JSXTransformer.js 的作用是将 JSX 语法转为 JavaScript 语法。这一步很消耗时间，实际上线的时候，应该将它放到服务器完成。</p>
-<p>到这里我们就可以开始编写代码了，首先我们先来认识一下ReactJs里面的React.render方法：</p>
-<p>React.render 是 React 的最基本方法，用于将模板转为 HTML 语言，并插入指定的 DOM 节点。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">React.render(</span><br><span class="line">        &lt;h1&gt;Hello, world!&lt;/h1&gt;,</span><br><span class="line">        document.getElementById(<span class="string">'container'</span>)</span><br><span class="line">      );</span><br></pre></td></tr></table></figure></p>
-<p><strong>react并不依赖jQuery，当然我们可以使用jQuery，但是render里面第二个参数必须使用JavaScript原生的getElementByID方法，不能使用jQuery来选取DOM节点。</strong><br>然后，在浏览器打开这个页面，就可以看到浏览器显示一个大大的Hello，world。</p>
-<p>到这里，恭喜，你已经步入了React.JS的大门。下面，让我们来进一步学习React.Js吧!</p>
+        <span itemprop="articleBody"><h3 id="React-Js小结">React.Js小结</h3><p>关于ReactJS今天就先学习到这里了，下面来总结一下，主要有以下几点：</p>
+<p>　　1、ReactJs是基于组件化的开发，所以最终你的页面应该是由若干个小组件组成的大组件。</p>
+<p>　　2、可以通过属性，将值传递到组件内部，同理也可以通过属性将内部的结果传递到父级组件(留给大家研究)；要对某些值的变化做DOM操作的，要把这些值放到state中。</p>
+<p>　　3、为组件添加外部css样式时，类名应该写成className而不是class;添加内部样式时，应该是<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">style=&#123;&#123;opacity: this.state.opacity&#125;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>　　4、组件名称首字母必须大写。</p>
+<p>　　5、变量名用{}包裹，且不能加双引号。</p>
+<h3 id="实例展示">实例展示</h3><p><img src="/images/20151107/colorp.jpg" alt=""><br>本文的实例是一个颜色盘，当用户把鼠标移动到底部的颜色条上时，上方方框内会提示对应的颜色。如果用 React 来实现这个实例，这个颜色盘会被分割成为多个 Component。最外面一层父级 Component 称为 ColorPanel，同时它包含了两个子 Component：上方的 ColorDisplay 和下方的 ColorBar。我们在 ColorPanel 的属性里面赋值了该颜色盘所要显示的所有颜色，ColorBar 获取这个颜色属性渲染出所有的颜色，当鼠标移动到 ColorBar 的某个颜色上时，ColorDisplay 显示对应的颜色和文字。在这个过程中，我们并不需要去手动触发所有组件的渲染，只需要在程序开始时渲染 ColorPanel。当 ColorPanel 的当前选中颜色这一状态发生变化时，子 Component（比如 ColorDisplay）就会根据这一状态自动重新渲染。这正是 React 的奇妙所在——用户更多的去关心数据的变化，而无需在意 DOM 节点的渲染。</p>
+<h4 id="创建第一个_Component">创建第一个 Component</h4><h5 id="清单_1-_创建_ColorPanel_Component">清单 1. 创建 ColorPanel Component</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var ColorPanel = React.createClass(&#123;</span><br><span class="line">render: <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line"><span class="built_in">return</span> (</span><br><span class="line">&lt;div&gt;</span><br><span class="line"> Color Panel</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">)</span><br><span class="line">&#125;</span><br><span class="line">&#125;);</span><br><span class="line">React.render(&lt;ColorPanel/&gt;, document.getElementById(<span class="string">'</span></span><br></pre></td></tr></table></figure>
+<p>清单 1 为创建 ColorPanel 这个 Component 的代码。通过 createClass 方法来创建了一个 Component。其中，createClass 需要传入一个 object 对象，这个对象可以定义不同的属性，比如 getInitialState、getDefaultProps、render 等等。 此处值得一提的是，与其它属性不同，render 方法是必须存在的，因为 render 方法的返回值代表的是 Component 的 template。 清单 1 的例子即是创建一个包含着 Color Panel 字样的 Component。</p>
+<p>当然，createClass 的功能是用来创建 Component 对象，如果要渲染这个 Component 到显示节点上，就需要调用 React.render 方法。在这个方法中包含两个参数，第一个参数需要指定需要渲染的 Component 对象，第二个参数表示该 Component 所挂载到父节点。</p>
+<p>看到这里，您可能会觉得疑惑：为什么 JavaScript 代码中嵌入了 HTML 标签？其实这段嵌套在在 render 方法里面的并非真正意义上的 HTML，React 称之为“JSX”。JSX 可以允许把 HTML 类似的语法转换为轻量级的 JavaScript 对象。</p>
+<h5 id="清单_2-_把_JSX_转化成_JavaScript_的方式来创建_Component">清单 2. 把 JSX 转化成 JavaScript 的方式来创建 Component</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var ColorPanel = React.createClass(&#123;</span><br><span class="line">displayName: <span class="string">"ColorPanel"</span>,</span><br><span class="line">render: <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line"><span class="built_in">return</span> React.createElement(<span class="string">"div"</span>, null, <span class="string">"Color Panel"</span>);</span><br><span class="line">&#125;</span><br><span class="line">&#125;);</span><br><span class="line">React.render(&lt;ColorPanel/&gt;, document.getElementById(<span class="string">'</span></span><br></pre></td></tr></table></figure>
+<p>在清单 2 的代码为 JSX 转化为 JavaScript 的表达方式。然而，在实际使用 React 开发中， 选着使用 JSX 的语法方式可以使代码结构更加清晰简洁。使用 JSX，开发人员还可以跳出 HTML 节点的限制自定义 Component。</p>
+<p>开发人员只需要在 HTML 页面中简单的添加清单 3 中的 JS 文件——React 提供的解析转化脚本，就可以轻松实现 JSX 到 JavaScript 的转化。</p>
+<p>#####清单 3. 在 HTML 中引用 JSX 转化脚本<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"build/JSXTransformer.js"</span>&gt;&lt;/</span><br></pre></td></tr></table></figure></p>
+<p>介绍完 JSX，此处需要引入另一个重要概念——虚拟 DOM。React 引入这种概念是因为虚拟 DOM 把当前真实的 DOM 节点转化成 JavaScript 对象。这使得 React 可以追踪当前虚拟 DOM(某些数据变化后生成)和之前的虚拟 DOM(某些数据变化之前)的差异。React 通过两者对比提取出来这些差异点，然后再在真实的 DOM 节点上执行必要的更新。在传统的开发中，通常 UI 上诸多状态变化会让维护应用的状态变得很困难和复杂。React 通过检测状态变化来每次重新渲染虚拟 DOM 节点，然后按需自动更新真实节点，这种方式可以让开发人员可以简单地专注在应用的状态上。</p>
+<p>总结一下上述操作的过程是： 首先某一信号触发应用中某些数据发生改变，React 就会重新渲染整个虚拟 DOM。然后 React 会比较现在的虚拟 DOM 与之前的虚拟 DOM 的差异，获知哪些是需要更新的，最后在真实的 DOM 上应用这些必要的更新。更具体的虚拟 DOM 技术，会在下面章节中详细介绍。</p>
+<h4 id="给_Component_添加_state">给 Component 添加 state</h4><p>上文中我们提到 UI 界面元素的诸多状态使得维护 UI 页面变的十分困难， React 却让着一切变的轻松起来。因为在 React 中，每一个 Component 都会维护自己的 state，当子 Component 需要这些 state 作为 props 时，则将其顺序传递下去。换句话说，如果有多个层级的 Component，它们公共的父级 Component 负责管理 state，然后通过 props 把 state 传递到子 Component 中。</p>
+<h5 id="清单_4-_为_Component_添加_state">清单 4. 为 Component 添加 state</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">var ColorPanel = React.createClass(&#123;</span><br><span class="line">getInitialState: <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line"><span class="built_in">return</span> &#123;</span><br><span class="line">selectedColor: <span class="string">'red'</span></span><br><span class="line">&#125;</span><br><span class="line">&#125;,</span><br><span class="line">render: <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line"><span class="built_in">return</span> (</span><br><span class="line">&lt;div&gt;</span><br><span class="line">&#123;this.state.selectedColor&#125;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">)</span><br><span class="line">&#125;</span><br><span class="line">&#125;);</span><br><span class="line">React.render(&lt;ColorPanel/&gt;, document.getElementById(<span class="string">'</span></span><br></pre></td></tr></table></figure>
+<p>清单 4 是一个 Component 使用内部 state 的一个例子。您会注意在这里创建组件时添加了一个 getInitialState 方法，它是用来设置 Component 的 state 的，它返回的是一个对象包含了 Component 的 data 或者 state 值。在这个例子中，也是通过这个方法告诉 Component 需要保存一个叫 selectedColor 的对象，在 Component 的 render 方法中就可以通过{this.state.selectedColor}来使用了。</p>
+<p>当然，Component 也可以来更改这个内部状态值，这要通过 setState 方法。之前说的“某一信号触发应用中某些数据发生改变”指的就是 setState 方法。不管 setState 方法何时调用，虚拟 DOM 都会被重新渲染，之后运行差异算法并按需更新真实的 DOM。</p>
 </span>
       
     </div>
@@ -332,17 +338,13 @@ React.Js 简介React 起源于 Faceb">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/11/04/执凉的大三小记/" rel="next" title="执凉的大三小记">
-                <i class="fa fa-chevron-left"></i> 执凉的大三小记
+              <a href="/2015/11/06/React-Js入门-二/" rel="next" title="React.Js入门(二)">
+                <i class="fa fa-chevron-left"></i> React.Js入门(二)
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/11/06/React-Js入门-二/" rel="prev" title="React.Js入门(二)">
-                React.Js入门(二) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -369,8 +371,8 @@ React.Js 简介React 起源于 Faceb">
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/11/05/ReactJs入门-一/"
-           data-title="React.Js 入门(一)" data-url="http://liuzhenkn.gitHub.io/2015/11/05/ReactJs入门-一/">
+      <div class="ds-thread" data-thread-key="2015/11/07/React-Js入门-三/"
+           data-title="React.Js (三)" data-url="http://liuzhenkn.gitHub.io/2015/11/07/React-Js入门-三/">
       </div>
     
   </div>
@@ -501,7 +503,7 @@ React.Js 简介React 起源于 Faceb">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#React-Js_简介"><span class="nav-number">1.</span> <span class="nav-text">React.Js 简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对React-Js的认识及优点"><span class="nav-number">2.</span> <span class="nav-text">对React.Js的认识及优点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#误区"><span class="nav-number">2.1.</span> <span class="nav-text">误区</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#组件化"><span class="nav-number">2.2.</span> <span class="nav-text">组件化</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下载React-Js"><span class="nav-number">3.</span> <span class="nav-text">下载React.Js</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#React-Js小结"><span class="nav-number">1.</span> <span class="nav-text">React.Js小结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例展示"><span class="nav-number">2.</span> <span class="nav-text">实例展示</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建第一个_Component"><span class="nav-number">2.1.</span> <span class="nav-text">创建第一个 Component</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#清单_1-_创建_ColorPanel_Component"><span class="nav-number">2.1.1.</span> <span class="nav-text">清单 1. 创建 ColorPanel Component</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#清单_2-_把_JSX_转化成_JavaScript_的方式来创建_Component"><span class="nav-number">2.1.2.</span> <span class="nav-text">清单 2. 把 JSX 转化成 JavaScript 的方式来创建 Component</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#给_Component_添加_state"><span class="nav-number">2.2.</span> <span class="nav-text">给 Component 添加 state</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#清单_4-_为_Component_添加_state"><span class="nav-number">2.2.1.</span> <span class="nav-text">清单 4. 为 Component 添加 state</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
