@@ -37,7 +37,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="大三,日记," />
+  <meta name="keywords" content="Javascript,前端," />
 
 
 
@@ -53,17 +53,20 @@
 
 
 
-<meta name="description" content="总是在感叹时间过得太快，殊不知时间就在感叹中溜走。大学生活已经过了一半多了，我也不再是刚入大学时那个还对世界很好奇的少年，这两年里有欢乐有悲伤有欣喜有烦闷，也算是经历了一些事情，心智也慢慢更加成熟。">
+<meta name="description" content="浮点数精确计算Javascript的浮点数运算，总是有些奇怪的结果，所以就在网上查了一下发现了原因:由于有些小数用二进制表示时是无穷的，故有些精确度丢失是无法避免的。如：0.2+0.1的的运算结果实际上是：0.30000000000000004还有:123var i = 0.07;var r = i*100;alert(r);
+结果是7.0000000000000001，但这明显不是我们想要的结果">
 <meta property="og:type" content="article">
-<meta property="og:title" content="执凉的大三小记">
-<meta property="og:url" content="http://liuzhenkn.gitHub.io/2015/11/04/执凉的大三小记/index.html">
+<meta property="og:title" content="Javascript浮点数运算问题">
+<meta property="og:url" content="http://liuzhenkn.gitHub.io/2015/11/10/Javascript浮点数运算问题/index.html">
 <meta property="og:site_name" content="执凉's blog">
-<meta property="og:description" content="总是在感叹时间过得太快，殊不知时间就在感叹中溜走。大学生活已经过了一半多了，我也不再是刚入大学时那个还对世界很好奇的少年，这两年里有欢乐有悲伤有欣喜有烦闷，也算是经历了一些事情，心智也慢慢更加成熟。">
-<meta property="og:image" content="http://liuzhenkn.gitHub.io/images/20151104/水逆中1.jpg">
-<meta property="og:updated_time" content="2015-11-08T12:04:22.096Z">
+<meta property="og:description" content="浮点数精确计算Javascript的浮点数运算，总是有些奇怪的结果，所以就在网上查了一下发现了原因:由于有些小数用二进制表示时是无穷的，故有些精确度丢失是无法避免的。如：0.2+0.1的的运算结果实际上是：0.30000000000000004还有:123var i = 0.07;var r = i*100;alert(r);
+结果是7.0000000000000001，但这明显不是我们想要的结果">
+<meta property="og:image" content="http://liuzhenkn.gitHub.io/images/20151110/example.png">
+<meta property="og:updated_time" content="2015-11-10T05:11:40.086Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="执凉的大三小记">
-<meta name="twitter:description" content="总是在感叹时间过得太快，殊不知时间就在感叹中溜走。大学生活已经过了一半多了，我也不再是刚入大学时那个还对世界很好奇的少年，这两年里有欢乐有悲伤有欣喜有烦闷，也算是经历了一些事情，心智也慢慢更加成熟。">
+<meta name="twitter:title" content="Javascript浮点数运算问题">
+<meta name="twitter:description" content="浮点数精确计算Javascript的浮点数运算，总是有些奇怪的结果，所以就在网上查了一下发现了原因:由于有些小数用二进制表示时是无穷的，故有些精确度丢失是无法避免的。如：0.2+0.1的的运算结果实际上是：0.30000000000000004还有:123var i = 0.07;var r = i*100;alert(r);
+结果是7.0000000000000001，但这明显不是我们想要的结果">
 
 
 
@@ -75,7 +78,7 @@
   };
 </script>
 
-  <title> 执凉的大三小记 | 执凉's blog </title>
+  <title> Javascript浮点数运算问题 | 执凉's blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -234,7 +237,7 @@
             
             
               
-                执凉的大三小记
+                Javascript浮点数运算问题
               
             
           </h1>
@@ -243,8 +246,8 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2015-11-04T20:27:57+08:00" content="2015-11-04">
-              2015-11-04
+            <time itemprop="dateCreated" datetime="2015-11-10T12:57:39+08:00" content="2015-11-10">
+              2015-11-10
             </time>
           </span>
 
@@ -253,8 +256,8 @@
               &nbsp; | &nbsp; 分类于
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/生活/" itemprop="url" rel="index">
-                    <span itemprop="name">生活</span>
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
                   </a>
                 </span>
 
@@ -269,8 +272,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/11/04/执凉的大三小记/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/11/04/执凉的大三小记/" itemprop="commentsCount"></span>
+                <a href="/2015/11/10/Javascript浮点数运算问题/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/11/10/Javascript浮点数运算问题/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -289,10 +292,14 @@
       
 
       
-        <span itemprop="articleBody"><p><img src="/images/20151104/水逆中1.jpg" alt=""></p>
-<p>总是在感叹时间过得太快，殊不知时间就在感叹中溜走。<br>大学生活已经过了一半多了，我也不再是刚入大学时那个还对世界很好奇的少年，这两年里有欢乐有悲伤有欣喜有烦闷，也算是经历了一些事情，心智也慢慢更加成熟。<br><a id="more"></a><br>大三开学不久就真的感受到了压力，首先是学习上，一系列的重量级专业课真是让人喘不过气来————计算机网络、操作系统、数据库、编译原理等；再就是发现踏上社会真的离自己不远了，看着自己上一级的学长学姐都找到了不错的工作，想想其实明年自己也是如此，而自己的技术力和项目经验还很不足，觉得大三应该更加努力的提升一下自己；再就是开学以来生活上的不顺吧，过了一段莫名其妙的生活，其实还是自己太傻。</p>
-<p>好像有规律一样，大学三年的九十月总是不太顺心，也许这就是所谓的低谷期吧，不过没关系，十一月已经来临，是时候开始一波学习工作了。虽然生活有时候很无聊，只是上课-吃饭-上课-吃饭-和某人晚安，但是我倒也并不嫌弃这种生活。</p>
-<p>接下来会是一段极其繁忙的时间吧，我要坚持学习，哦！还有坚持长肉！</p>
+        <span itemprop="articleBody"><h3 id="浮点数精确计算">浮点数精确计算</h3><p>Javascript的浮点数运算，总是有些奇怪的结果，所以就在网上查了一下发现了原因:<br>由于有些小数用二进制表示时是无穷的，故有些精确度丢失是无法避免的。<br>如：0.2+0.1的的运算结果实际上是：0.30000000000000004<br><img src="/images/20151110/example.png" alt=""><br>还有:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var i = <span class="number">0.07</span>;</span><br><span class="line">var r = i*<span class="number">100</span>;</span><br><span class="line">alert(r);</span><br></pre></td></tr></table></figure></p>
+<p>结果是7.0000000000000001，但这明显不是我们想要的结果。<br>在JavsScript中，变量在存储时并不区分number和float类型，而是统一按float存储。而javascript使用IEEE 754-2008 标准定义的64bit浮点格式存储number，按照IEEE 754的定义： <a href="http://en.wikipedia.org/wiki/IEEE_754-2008" target="_blank" rel="external">http://en.wikipedia.org/wiki/IEEE_754-2008</a><br>decimal64对应的整形部分长度为10,小数部分长度为16，所以默认的计算结果为“7.0000000000000001”，如最后一个小数为0，则取1作为有效数字标志。<br>类似地，我们可以想像，1/3的结果应该是0.3333333333333333。<br>为了得到我们想要的结果，我们需要校正这个值。</p>
+<h4 id="解决方法">解决方法</h4><p>通过Math.pow(x,y)函数，返回x的y次幂。<br>如果结果是虚数或负数，则该方法将返回 NaN。如果由于指数过大而引起浮点溢出，则该方法将返回 Infinity。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">//除法函数，用来得到精确的除法结果     </span><br><span class="line">//调用：division(arg1,arg2)      </span><br><span class="line">//返回值：arg1除以arg2的精确结果   </span><br><span class="line"><span class="keyword">function</span> division(arg1,arg2)&#123;   </span><br><span class="line">    var t1=<span class="number">0</span>,t2=<span class="number">0</span>,r1,r2;   </span><br><span class="line">    try&#123;t1=arg1.toString().split(<span class="string">"."</span>)[<span class="number">1</span>].length&#125;catch(e)&#123;&#125;   </span><br><span class="line">    try&#123;t2=arg2.toString().split(<span class="string">"."</span>)[<span class="number">1</span>].length&#125;catch(e)&#123;&#125;   </span><br><span class="line">    with(Math)&#123;   </span><br><span class="line">        r1=Number(arg1.toString().replace(<span class="string">"."</span>,<span class="string">""</span>));   </span><br><span class="line">        r2=Number(arg2.toString().replace(<span class="string">"."</span>,<span class="string">""</span>));    </span><br><span class="line">        <span class="built_in">return</span> (r1/r2)*pow(<span class="number">10</span>,t2-t1);   </span><br><span class="line">    &#125;   </span><br><span class="line">&#125;   </span><br><span class="line">  </span><br><span class="line">//乘法函数，用来得到精确的乘法结果       </span><br><span class="line">//调用：multiply(arg1,arg2)      </span><br><span class="line">//返回值：arg1乘以arg2的精确结果      </span><br><span class="line"><span class="keyword">function</span> multiply(arg1,arg2)&#123;   </span><br><span class="line">    arg1=String(arg1);var i=arg1.length-arg1.indexOf(<span class="string">"."</span>)-<span class="number">1</span>;i=(i&gt;=arg1.length)?<span class="number">0</span>:i;   </span><br><span class="line">    arg2=String(arg2);var j=arg2.length-arg2.indexOf(<span class="string">"."</span>)-<span class="number">1</span>;j=(j&gt;=arg2.length)?<span class="number">0</span>:j;   </span><br><span class="line">    <span class="built_in">return</span> arg1.replace(<span class="string">"."</span>,<span class="string">""</span>)*arg2.replace(<span class="string">"."</span>,<span class="string">""</span>)/Math.pow(<span class="number">10</span>,i+j);   </span><br><span class="line">&#125;    </span><br><span class="line">  </span><br><span class="line">//加法函数，用来得到精确的加法结果            </span><br><span class="line">//调用：add(arg1,arg2)      </span><br><span class="line">//返回值：arg1加上arg2的精确结果      </span><br><span class="line"><span class="keyword">function</span> add(arg1,arg2)&#123;   </span><br><span class="line">    var r1,r2,m;   </span><br><span class="line">    try&#123;r1=arg1.toString().split(<span class="string">"."</span>)[<span class="number">1</span>].length&#125;catch(e)&#123;r1=<span class="number">0</span>&#125;   </span><br><span class="line">    try&#123;r2=arg2.toString().split(<span class="string">"."</span>)[<span class="number">1</span>].length&#125;catch(e)&#123;r2=<span class="number">0</span>&#125;   </span><br><span class="line">    m=Math.pow(<span class="number">10</span>,Math.max(r1,r2));   </span><br><span class="line">    <span class="built_in">return</span> (arg1*m+arg2*m)/m;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>最后可以给Number类型增加相应的计算方法来方便调用。<br>这样如果你要计算 0.7 * 0.8，只需（0.7）.mul(0.8)，调用 mul 方法就可以得到准确的结果了。</p>
+<h3 id="总结">总结</h3><ul>
+<li>尽量不要用 js 进行复杂的运算，特别是浮点数的运算。</li>
+<li>如果一定要进行浮点数运算，先将浮点数转化为整型，再运算。</li>
+</ul>
 </span>
       
     </div>
@@ -301,9 +308,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/大三/" rel="tag">#大三</a>
+            <a href="/tags/Javascript/" rel="tag">#Javascript</a>
           
-            <a href="/tags/日记/" rel="tag">#日记</a>
+            <a href="/tags/前端/" rel="tag">#前端</a>
           
         </div>
       
@@ -312,17 +319,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/11/03/前端开发者都应知道的15个Jquery小技巧/" rel="next" title="前端开发者都应知道的15个Jquery小技巧">
-                <i class="fa fa-chevron-left"></i> 前端开发者都应知道的15个Jquery小技巧
+              <a href="/2015/11/09/这样去写你的HTML/" rel="next" title="这样去写你的HTML">
+                <i class="fa fa-chevron-left"></i> 这样去写你的HTML
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/11/05/ReactJs入门-一/" rel="prev" title="React.Js 入门(一)">
-                React.Js 入门(一) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -349,8 +352,8 @@
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/11/04/执凉的大三小记/"
-           data-title="执凉的大三小记" data-url="http://liuzhenkn.gitHub.io/2015/11/04/执凉的大三小记/">
+      <div class="ds-thread" data-thread-key="2015/11/10/Javascript浮点数运算问题/"
+           data-title="Javascript浮点数运算问题" data-url="http://liuzhenkn.gitHub.io/2015/11/10/Javascript浮点数运算问题/">
       </div>
     
   </div>
@@ -481,7 +484,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#浮点数精确计算"><span class="nav-number">1.</span> <span class="nav-text">浮点数精确计算</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#解决方法"><span class="nav-number">1.1.</span> <span class="nav-text">解决方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">2.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
