@@ -814,7 +814,7 @@ body {
 .bg-img div {
   width: 100%;
   height: 100%;
-  background: url("/images/sky.jpg") no-repeat;
+  background: none;
   background-size: 100% 100%;
   opacity: 0.6;
 }
@@ -974,7 +974,7 @@ body {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #86ff38;
+  background: #3b3794;
 }
 .sidebar-nav {
   margin: 0 0 20px;
