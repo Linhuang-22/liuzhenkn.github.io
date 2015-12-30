@@ -74,7 +74,7 @@
 <meta property="og:image" content="http://liuzhenkn.gitHub.io/images/20151227/testgit11.png">
 <meta property="og:image" content="http://liuzhenkn.gitHub.io/images/20151227/testgit12.png">
 <meta property="og:image" content="http://liuzhenkn.gitHub.io/images/20151227/testgit13.png">
-<meta property="og:updated_time" content="2015-12-30T11:59:35.347Z">
+<meta property="og:updated_time" content="2015-12-30T12:02:57.696Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git的学习小记(一)">
 <meta name="twitter:description" content="最近学习了Git的使用，觉得使用命令来管理自己的仓库及项目是十分方便的，所以就把最近学习的内容记录下来，希望对来看博客的同学有所帮助。
@@ -310,7 +310,7 @@
 <p>因为Git是分布式版本控制系统，所以需要填写用户名和邮箱作为一个标识。<br>注意的是，git config –global 参数表示此台计算机上的所有Git仓库都会使用这个配置，当然也可以重新指定不同的用户名和邮箱。</p>
 <h3 id="创建版本库">创建版本库</h3><p>既然安装已经结束，那么接下来就是正式操作啦。<br>首先你要进入你要创建仓库的目录(使用 cd 路径名)。<br><img src="/images/20151227/testgit1.png" alt=""><br>pwd命令查看当前目录<br>1.使用git init命令把这个目录变成Git可以管理的仓库。<br><img src="/images/20151227/testgit2.png" alt=""><br>2.将文件添加到仓库中<br>在Git中，版本控制系统可以告诉你每次的改动。<br>我们现在testgit目录下新建一个文件readme.txt，内容为：11111111。<br>然后使用git add readme.txt命令添加到暂存区中。<br><img src="/images/20151227/testgit3.png" alt=""><br>如果和图上一样没有任何提示，说明添加成功。<br>接下来我们要用git commit命令让Git将暂存区中的文件提交到仓库。<br><img src="/images/20151227/testgit4.png" alt=""><br>这样readme.txt就已经提交了。<br>我们还可以使用git status命令查看是否还有文件未提交。<br><img src="/images/20151227/testgit5.png" alt=""><br>说明没有未提交的文件。<br>接下来再让我们修改一下readme.txt，添加一行”22222222”。<br>我们要查看修改信息该使用什么命令呢？——git diff readme.txt<br><img src="/images/20151227/testgit6.png" alt=""><br>由图我们可以看到，readme.txt内容从一行11111111改成两行，添加了一行22222222.<br>最后我们可以提交修改了：<br><img src="/images/20151227/testgit6.png" alt=""><br>注意要先 git add 再 git commit。</p>
 <h3 id="版本回退">版本回退</h3><p>我们已经学会了修改文件，现在我继续对readme.txt文件进行修改，再增加一行内容为33333333333333，并将内容提交。<br><img src="/images/20151227/testgit8.png" alt=""><br>那我们如何查看我们的历史纪录呢？<br>使用git log命令：<br><img src="/images/20151227/testgit9.png" alt=""><br>git log命令显示从最近到最远的显示日志，我们可以看到最近三次提交，最近的一次是,增加内容为333333.上一次是添加内容222222，第一次默认.<br>那么我想回到上一个版本，该使用什么命令？<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard HEAD^(上上个版本就用HEAD^^,上<span class="number">100</span>个版本就是HEAD~<span class="number">100</span>)</span><br></pre></td></tr></table></figure></p>
-<p><img src="/images/20151227/testgit10.png" alt=""><br>再用 cat命令查看一下文件的内容，发现已经会退到上个版本了。<br><img src="/images/20151227/testgit11.png" alt=""><br>最后再用git log查看历史信息，发现已经没有”添加333333”的内容了，那么我们该如何再恢复那个版本呢？<br>使用 git reset –hard 版本号，不记得版本号需要使用git reflog命令获取版本号。<br><img src="/images/20151227/testgit12.png" alt=""><br>最前面的就是版本号，我们使用 git reset –hard 6a100f2 来恢复。<br><img src="/images/20151227/testgit13.png" alt=""><br>成功！</p>
+<p><img src="/images/20151227/testgit10.png" alt=""><br>再用 cat命令查看一下文件的内容，发现已经会退到上个版本了。<br><img src="/images/20151227/testgit11.png" alt=""><br>最后再用git log查看历史信息，发现已经没有”添加333333”的内容了，那么我们该如何再恢复那个版本呢？<br>使用 git reset –hard 版本号，不记得版本号需要使用git reflog命令获取版本号。<br><img src="/images/20151227/testgit12.png" alt=""><br>最前面的就是版本号，我们使用 git reset –hard 6a100f2 来恢复。<br><img src="/images/20151227/testgit13.png" alt=""><br>成功！<br>(突然发现我后面省略的截图好烂！不要打我，我下次改。)</p>
 </span>
       
     </div>
