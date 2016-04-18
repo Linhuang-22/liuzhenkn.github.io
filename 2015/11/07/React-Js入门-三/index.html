@@ -1,0 +1,775 @@
+<!doctype html>
+<html class="theme-next   use-motion ">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  
+    <link href='//fonts.lug.ustc.edu.cn/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="React.Js,前端," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
+
+
+
+
+
+
+<meta name="description" content="React.Js小结关于React.JS就先学习到这里了，下面来总结一下，主要有以下几点：
+　　1、ReactJs是基于组件化的开发，所以最终你的页面应该是由若干个小组件组成的大组件。
+　　2、可以通过属性，将值传递到组件内部，同理也可以通过属性将内部的结果传递到父级组件(留给大家研究)；要对某些值的变化做DOM操作的，要把这些值放到state中。
+　　3、为组件添加外部css样式时，类名应该写成">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React.Js (三)">
+<meta property="og:url" content="http://liuzhenkn.gitHub.io/2015/11/07/React-Js入门-三/index.html">
+<meta property="og:site_name" content="执凉's blog">
+<meta property="og:description" content="React.Js小结关于React.JS就先学习到这里了，下面来总结一下，主要有以下几点：
+　　1、ReactJs是基于组件化的开发，所以最终你的页面应该是由若干个小组件组成的大组件。
+　　2、可以通过属性，将值传递到组件内部，同理也可以通过属性将内部的结果传递到父级组件(留给大家研究)；要对某些值的变化做DOM操作的，要把这些值放到state中。
+　　3、为组件添加外部css样式时，类名应该写成">
+<meta property="og:image" content="http://liuzhenkn.gitHub.io/images/20151107/colorp.jpg">
+<meta property="og:updated_time" content="2015-11-08T11:47:48.737Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="React.Js (三)">
+<meta name="twitter:description" content="React.Js小结关于React.JS就先学习到这里了，下面来总结一下，主要有以下几点：
+　　1、ReactJs是基于组件化的开发，所以最终你的页面应该是由若干个小组件组成的大组件。
+　　2、可以通过属性，将值传递到组件内部，同理也可以通过属性将内部的结果传递到父级组件(留给大家研究)；要对某些值的变化做DOM操作的，要把这些值放到state中。
+　　3、为组件添加外部css样式时，类名应该写成">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: '',
+    sidebar: 'always',
+    motion: true
+  };
+</script>
+
+  <title> React.Js (三) | 执凉's blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <div class="bg-img">
+	<div></div>
+</div>
+<!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">执凉's blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">努力中的前端程序员</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu menu-left">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+      
+        <li class="menu-item menu-item-search">
+          <a href="#" class="st-search-show-outputs">
+            
+              <i class="menu-item-icon fa fa-search icon-next-search"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'XWez5F8Bcp6m5hhZEji-','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                React.Js (三)
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2015-11-07T19:27:23+08:00" content="2015-11-07">
+              2015-11-07
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/11/07/React-Js入门-三/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/11/07/React-Js入门-三/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><h3 id="React-Js小结">React.Js小结</h3><p>关于React.JS就先学习到这里了，下面来总结一下，主要有以下几点：</p>
+<p>　　1、ReactJs是基于组件化的开发，所以最终你的页面应该是由若干个小组件组成的大组件。</p>
+<p>　　2、可以通过属性，将值传递到组件内部，同理也可以通过属性将内部的结果传递到父级组件(留给大家研究)；要对某些值的变化做DOM操作的，要把这些值放到state中。</p>
+<p>　　3、为组件添加外部css样式时，类名应该写成className而不是class;添加内部样式时，应该是<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">style=&#123;&#123;opacity: this.state.opacity&#125;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>　　4、组件名称首字母必须大写。</p>
+<p>　　5、变量名用{}包裹，且不能加双引号。</p>
+<h3 id="实例展示">实例展示</h3><p><img src="/images/20151107/colorp.jpg" alt=""><br>本文的实例是一个颜色盘，当用户把鼠标移动到底部的颜色条上时，上方方框内会提示对应的颜色。如果用 React 来实现这个实例，这个颜色盘会被分割成为多个 Component。最外面一层父级 Component 称为 ColorPanel，同时它包含了两个子 Component：上方的 ColorDisplay 和下方的 ColorBar。我们在 ColorPanel 的属性里面赋值了该颜色盘所要显示的所有颜色，ColorBar 获取这个颜色属性渲染出所有的颜色，当鼠标移动到 ColorBar 的某个颜色上时，ColorDisplay 显示对应的颜色和文字。在这个过程中，我们并不需要去手动触发所有组件的渲染，只需要在程序开始时渲染 ColorPanel。当 ColorPanel 的当前选中颜色这一状态发生变化时，子 Component（比如 ColorDisplay）就会根据这一状态自动重新渲染。这正是 React 的奇妙所在——用户更多的去关心数据的变化，而无需在意 DOM 节点的渲染。</p>
+<h4 id="创建第一个_Component">创建第一个 Component</h4><h5 id="清单_1-_创建_ColorPanel_Component">清单 1. 创建 ColorPanel Component</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var ColorPanel = React.createClass(&#123;</span><br><span class="line">render: <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line"><span class="built_in">return</span> (</span><br><span class="line">&lt;div&gt;</span><br><span class="line"> Color Panel</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">)</span><br><span class="line">&#125;</span><br><span class="line">&#125;);</span><br><span class="line">React.render(&lt;ColorPanel/&gt;, document.getElementById(<span class="string">'demo'</span>));</span><br></pre></td></tr></table></figure>
+<p>清单 1 为创建 ColorPanel 这个 Component 的代码。通过 createClass 方法来创建了一个 Component。其中，createClass 需要传入一个 object 对象，这个对象可以定义不同的属性，比如 getInitialState、getDefaultProps、render 等等。 此处值得一提的是，与其它属性不同，render 方法是必须存在的，因为 render 方法的返回值代表的是 Component 的 template。 清单 1 的例子即是创建一个包含着 Color Panel 字样的 Component。</p>
+<p>当然，createClass 的功能是用来创建 Component 对象，如果要渲染这个 Component 到显示节点上，就需要调用 React.render 方法。在这个方法中包含两个参数，第一个参数需要指定需要渲染的 Component 对象，第二个参数表示该 Component 所挂载到父节点。</p>
+<p>看到这里，您可能会觉得疑惑：为什么 JavaScript 代码中嵌入了 HTML 标签？其实这段嵌套在在 render 方法里面的并非真正意义上的 HTML，React 称之为“JSX”。JSX 可以允许把 HTML 类似的语法转换为轻量级的 JavaScript 对象。</p>
+<h5 id="清单_2-_把_JSX_转化成_JavaScript_的方式来创建_Component">清单 2. 把 JSX 转化成 JavaScript 的方式来创建 Component</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var ColorPanel = React.createClass(&#123;</span><br><span class="line">displayName: <span class="string">"ColorPanel"</span>,</span><br><span class="line">render: <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line"><span class="built_in">return</span> React.createElement(<span class="string">"div"</span>, null, <span class="string">"Color Panel"</span>);</span><br><span class="line">&#125;</span><br><span class="line">&#125;);</span><br><span class="line">React.render(&lt;ColorPanel/&gt;, document.getElementById(<span class="string">'demo'</span>));</span><br></pre></td></tr></table></figure>
+<p>在清单 2 的代码为 JSX 转化为 JavaScript 的表达方式。然而，在实际使用 React 开发中， 选着使用 JSX 的语法方式可以使代码结构更加清晰简洁。使用 JSX，开发人员还可以跳出 HTML 节点的限制自定义 Component。</p>
+<p>开发人员只需要在 HTML 页面中简单的添加清单 3 中的 JS 文件——React 提供的解析转化脚本，就可以轻松实现 JSX 到 JavaScript 的转化。</p>
+<h5 id="清单_3-_在_HTML_中引用_JSX_转化脚本">清单 3. 在 HTML 中引用 JSX 转化脚本</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"build/JSXTransformer.js"</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>介绍完 JSX，此处需要引入另一个重要概念——虚拟 DOM。React 引入这种概念是因为虚拟 DOM 把当前真实的 DOM 节点转化成 JavaScript 对象。这使得 React 可以追踪当前虚拟 DOM(某些数据变化后生成)和之前的虚拟 DOM(某些数据变化之前)的差异。React 通过两者对比提取出来这些差异点，然后再在真实的 DOM 节点上执行必要的更新。在传统的开发中，通常 UI 上诸多状态变化会让维护应用的状态变得很困难和复杂。React 通过检测状态变化来每次重新渲染虚拟 DOM 节点，然后按需自动更新真实节点，这种方式可以让开发人员可以简单地专注在应用的状态上。</p>
+<p>总结一下上述操作的过程是： 首先某一信号触发应用中某些数据发生改变，React 就会重新渲染整个虚拟 DOM。然后 React 会比较现在的虚拟 DOM 与之前的虚拟 DOM 的差异，获知哪些是需要更新的，最后在真实的 DOM 上应用这些必要的更新。更具体的虚拟 DOM 技术，会在下面章节中详细介绍。</p>
+<h4 id="给_Component_添加_state">给 Component 添加 state</h4><p>上文中我们提到 UI 界面元素的诸多状态使得维护 UI 页面变的十分困难， React 却让着一切变的轻松起来。因为在 React 中，每一个 Component 都会维护自己的 state，当子 Component 需要这些 state 作为 props 时，则将其顺序传递下去。换句话说，如果有多个层级的 Component，它们公共的父级 Component 负责管理 state，然后通过 props 把 state 传递到子 Component 中。</p>
+<h5 id="清单_4-_为_Component_添加_state">清单 4. 为 Component 添加 state</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">var ColorPanel = React.createClass(&#123;</span><br><span class="line">getInitialState: <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line"><span class="built_in">return</span> &#123;</span><br><span class="line">selectedColor: <span class="string">'red'</span></span><br><span class="line">&#125;</span><br><span class="line">&#125;,</span><br><span class="line">render: <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line"><span class="built_in">return</span> (</span><br><span class="line">&lt;div&gt;</span><br><span class="line">&#123;this.state.selectedColor&#125;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">)</span><br><span class="line">&#125;</span><br><span class="line">&#125;);</span><br><span class="line">React.render(&lt;ColorPanel/&gt;, document.getElementById(<span class="string">'demo'</span>));</span><br></pre></td></tr></table></figure>
+<p>清单 4 是一个 Component 使用内部 state 的一个例子。您会注意在这里创建组件时添加了一个 getInitialState 方法，它是用来设置 Component 的 state 的，它返回的是一个对象包含了 Component 的 data 或者 state 值。在这个例子中，也是通过这个方法告诉 Component 需要保存一个叫 selectedColor 的对象，在 Component 的 render 方法中就可以通过{this.state.selectedColor}来使用了。</p>
+<p>当然，Component 也可以来更改这个内部状态值，这要通过 setState 方法。之前说的“某一信号触发应用中某些数据发生改变”指的就是 setState 方法。不管 setState 方法何时调用，虚拟 DOM 都会被重新渲染，之后运行差异算法并按需更新真实的 DOM。</p>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/React-Js/" rel="tag">#React.Js</a>
+          
+            <a href="/tags/前端/" rel="tag">#前端</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/11/06/React-Js入门-二/" rel="next" title="React.Js入门(二)">
+                <i class="fa fa-chevron-left"></i> React.Js入门(二)
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/11/08/React-Js入门-完/" rel="prev" title="React.Js 入门(完)">
+                React.Js 入门(完) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+        </div>
+
+        
+
+
+        
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2015/11/07/React-Js入门-三/"
+           data-title="React.Js (三)" data-url="http://liuzhenkn.gitHub.io/2015/11/07/React-Js入门-三/">
+      </div>
+    
+  </div>
+
+
+      </div>
+
+      
+        
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/images/picture.jpg" alt="执凉" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">执凉</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description">努力中的前端程序员</p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            
+              <span class="site-state-item-count">16</span>
+              <span class="site-state-item-name">标签</span>
+              
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://www.facebook.com/profile.php?id=100009724052727&sk=about" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> Facebook
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/liuzhenkn" target="_blank">
+                  
+                    <i class="fa fa-github"></i> GitHub
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:314339793@qq.com" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> Email
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+            <p class="site-author-name">Links</p>
+            
+              <span class="links-of-author-item">
+                <a href="http://macshuo.com/" target="_blank">MacTalk</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://blog.ymming.com/" target="_blank">Ymming</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://blog.waydrow.com/" target="_blank">Waydrow</a>
+              </span>
+            
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#React-Js小结"><span class="nav-number">1.</span> <span class="nav-text">React.Js小结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例展示"><span class="nav-number">2.</span> <span class="nav-text">实例展示</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建第一个_Component"><span class="nav-number">2.1.</span> <span class="nav-text">创建第一个 Component</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#清单_1-_创建_ColorPanel_Component"><span class="nav-number">2.1.1.</span> <span class="nav-text">清单 1. 创建 ColorPanel Component</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#清单_2-_把_JSX_转化成_JavaScript_的方式来创建_Component"><span class="nav-number">2.1.2.</span> <span class="nav-text">清单 2. 把 JSX 转化成 JavaScript 的方式来创建 Component</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#清单_3-_在_HTML_中引用_JSX_转化脚本"><span class="nav-number">2.1.3.</span> <span class="nav-text">清单 3. 在 HTML 中引用 JSX 转化脚本</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#给_Component_添加_state"><span class="nav-number">2.2.</span> <span class="nav-text">给 Component 添加 state</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#清单_4-_为_Component_添加_state"><span class="nav-number">2.2.1.</span> <span class="nav-text">清单 4. 为 Component 添加 state</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+      
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="icon-next-heart fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">执凉</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+
+  
+    
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"liuzhenkn"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+    
+     
+
+
+    
+  
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+<script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+<script type="text/javascript" src="/js/motion.js?v=0.4.5.2" id="motion.global"></script>
+
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    motionMiddleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  <script type="text/javascript" src="/js/bootstrap.js"></script>
+
+  
+  
+
+  
+  
+
+</body>
+</html>

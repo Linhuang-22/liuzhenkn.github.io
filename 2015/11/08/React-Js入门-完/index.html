@@ -1,0 +1,754 @@
+<!doctype html>
+<html class="theme-next   use-motion ">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  
+    <link href='//fonts.lug.ustc.edu.cn/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="React.Js,前端," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
+
+
+
+
+
+
+<meta name="description" content="清单 5. 从父节点中获取 state123456789101112131415161718var ColorPanel = React.createClass(&amp;#123;render: function() &amp;#123;return (&amp;lt;div&amp;gt;&amp;lt;ColorBar colors=&amp;#123;this.props.colors&amp;#125; /&amp;gt;&amp;lt;/div&amp;gt;);">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React.Js 入门(完)">
+<meta property="og:url" content="http://liuzhenkn.gitHub.io/2015/11/08/React-Js入门-完/index.html">
+<meta property="og:site_name" content="执凉's blog">
+<meta property="og:description" content="清单 5. 从父节点中获取 state123456789101112131415161718var ColorPanel = React.createClass(&amp;#123;render: function() &amp;#123;return (&amp;lt;div&amp;gt;&amp;lt;ColorBar colors=&amp;#123;this.props.colors&amp;#125; /&amp;gt;&amp;lt;/div&amp;gt;);">
+<meta property="og:updated_time" content="2015-11-08T12:05:09.512Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="React.Js 入门(完)">
+<meta name="twitter:description" content="清单 5. 从父节点中获取 state123456789101112131415161718var ColorPanel = React.createClass(&amp;#123;render: function() &amp;#123;return (&amp;lt;div&amp;gt;&amp;lt;ColorBar colors=&amp;#123;this.props.colors&amp;#125; /&amp;gt;&amp;lt;/div&amp;gt;);">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: '',
+    sidebar: 'always',
+    motion: true
+  };
+</script>
+
+  <title> React.Js 入门(完) | 执凉's blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <div class="bg-img">
+	<div></div>
+</div>
+<!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">执凉's blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">努力中的前端程序员</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu menu-left">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+      
+        <li class="menu-item menu-item-search">
+          <a href="#" class="st-search-show-outputs">
+            
+              <i class="menu-item-icon fa fa-search icon-next-search"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'XWez5F8Bcp6m5hhZEji-','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                React.Js 入门(完)
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2015-11-08T19:43:25+08:00" content="2015-11-08">
+              2015-11-08
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/11/08/React-Js入门-完/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/11/08/React-Js入门-完/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><h4 id="清单_5-_从父节点中获取_state">清单 5. 从父节点中获取 state</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">var ColorPanel = React.createClass(&#123;</span><br><span class="line">render: <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line"><span class="built_in">return</span> (</span><br><span class="line">&lt;div&gt;</span><br><span class="line">&lt;ColorBar colors=&#123;this.props.colors&#125; /&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">);</span><br><span class="line">&#125;,</span><br><span class="line">&#125;);</span><br><span class="line">var colors = [</span><br><span class="line">&#123;id: <span class="number">1</span>, value: <span class="string">'red'</span>, title: <span class="string">'red'</span>&#125;, </span><br><span class="line">&#123;id: <span class="number">2</span>, value: <span class="string">'blue'</span>, title: <span class="string">'blue'</span>&#125;, </span><br><span class="line">&#123;id: <span class="number">3</span>, value: <span class="string">'green'</span>, title: <span class="string">'green'</span>&#125;, </span><br><span class="line">&#123;id: <span class="number">4</span>, value: <span class="string">'yellow'</span>, title: <span class="string">'yellow'</span>&#125;, </span><br><span class="line">&#123;id: <span class="number">5</span>, value: <span class="string">'pink'</span>, title: <span class="string">'pink'</span>&#125;, </span><br><span class="line">&#123;id: <span class="number">6</span>, value: <span class="string">'black'</span>, title: <span class="string">'black'</span>&#125;</span><br><span class="line">];</span><br><span class="line">React.render(&lt;ColorPanel colors=&#123;colors&#125;/&gt;, document.getElementById(<span class="string">'demo'</span>));</span><br></pre></td></tr></table></figure>
+<p>我们可以通过改变 render 函数的内容来改变组件的行为。但是如果想要根据外部的信息来改变组件的行为，就需要使用 Properties。当然，我们也可以通过 getDefaultProps()来返回 property 的初始值，该方法的返回值必须是一个对象。任何通过 getDefaultProps()返回的对象都会被所用实例共享。清单 6 中展示了通过 getDefaultProps 方法获取 props 初始值的实例。</p>
+<h4 id="清单_6-_通过_getDefaultProps_获取_props_初始值">清单 6. 通过 getDefaultProps 获取 props 初始值</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">var ColorPanel = React.createClass(&#123;</span><br><span class="line">getDefaultProps: <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line"><span class="built_in">return</span> &#123;</span><br><span class="line">colors: [</span><br><span class="line">&#123;id: <span class="number">1</span>, value: <span class="string">'red'</span>, title: <span class="string">'red'</span>&#125;, </span><br><span class="line">&#123;id: <span class="number">2</span>, value: <span class="string">'blue'</span>, title: <span class="string">'blue'</span>&#125;, </span><br><span class="line">&#123;id: <span class="number">3</span>, value: <span class="string">'green'</span>, title: <span class="string">'green'</span>&#125;, </span><br><span class="line">&#123;id: <span class="number">4</span>, value: <span class="string">'yellow'</span>, title: <span class="string">'yellow'</span>&#125;, </span><br><span class="line">&#123;id: <span class="number">5</span>, value: <span class="string">'pink'</span>, title: <span class="string">'pink'</span>&#125;, </span><br><span class="line">&#123;id: <span class="number">6</span>, value: <span class="string">'black'</span>, title: <span class="string">'black'</span>&#125;</span><br><span class="line">]</span><br><span class="line">&#125;</span><br><span class="line">&#125;,</span><br><span class="line">render: <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line"><span class="built_in">return</span> (</span><br><span class="line">&lt;div&gt;</span><br><span class="line">&lt;ColorBar colors=&#123;this.props.colors&#125; /&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">);</span><br><span class="line">&#125;,</span><br><span class="line">&#125;);</span><br><span class="line">React.render(&lt;ColorPanel/&gt;, document.getElementById(<span class="string">'demo'</span>));</span><br></pre></td></tr></table></figure>
+<p>至于生命周期、虚拟DOm、Flux我暂时还不太懂，以后再深入了解。</p>
+<h3 id="实例分析">实例分析</h3><p>最后，通过对于上一个部分的了解，相信测试此时的您心中已经有了 React 的基本轮廓。下面让我来看一下完整的 ColorPanel 实例的具体实现吧！首先，在 index.html 里面引入三个 JSX 文件。这三个文件就是我们使用 React 实现 ColorPanel 的源代码。</p>
+<h4 id="清单_7-_HTML_文件中引用的_JSX_文件">清单 7. HTML 文件中引用的 JSX 文件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script <span class="built_in">type</span>=<span class="string">"text/jsx"</span> src=<span class="string">"js/colorBar.jsx"</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;script <span class="built_in">type</span>=<span class="string">"text/jsx"</span> src=<span class="string">"js/colorDisplay.jsx"</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;script <span class="built_in">type</span>=<span class="string">"text/jsx"</span> src=<span class="string">"js/colorPanel.jsx"</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="清单_8-_colorPanel-jsx_代码">清单 8. colorPanel.jsx 代码</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">var ColorPanel = React.createClass(&#123;</span><br><span class="line">getDefaultProps: <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line"><span class="built_in">return</span> &#123;</span><br><span class="line"> colors: [</span><br><span class="line">&#123;id: <span class="number">1</span>, value: <span class="string">'red'</span>, title: <span class="string">'red'</span>&#125;, </span><br><span class="line">&#123;id: <span class="number">2</span>, value: <span class="string">'blue'</span>, title: <span class="string">'blue'</span>&#125;, </span><br><span class="line">&#123;id: <span class="number">3</span>, value: <span class="string">'green'</span>, title: <span class="string">'green'</span>&#125;, </span><br><span class="line">&#123;id: <span class="number">4</span>, value: <span class="string">'yellow'</span>, title: <span class="string">'yellow'</span>&#125;, </span><br><span class="line">&#123;id: <span class="number">5</span>, value: <span class="string">'pink'</span>, title: <span class="string">'pink'</span>&#125;, </span><br><span class="line">&#123;id: <span class="number">6</span>, value: <span class="string">'black'</span>, title: <span class="string">'black'</span>&#125;</span><br><span class="line"> ],</span><br><span class="line"> defaultColorId: <span class="number">1</span></span><br><span class="line"> &#125;</span><br><span class="line">&#125;,</span><br><span class="line">getInitialState: <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line"><span class="built_in">return</span> &#123;</span><br><span class="line"> selectedColor: this.getSelectedColor(this.props.defaultColorId)</span><br><span class="line"> &#125;</span><br><span class="line">&#125;,</span><br><span class="line">getSelectedColor: <span class="keyword">function</span>(colorId) &#123;</span><br><span class="line"><span class="keyword">if</span>(!colorId)</span><br><span class="line"><span class="built_in">return</span> null;</span><br><span class="line">var length = this.props.colors.length;</span><br><span class="line"><span class="keyword">for</span>(var i = <span class="number">0</span>; i&lt; length; i++) &#123;</span><br><span class="line"><span class="keyword">if</span>(this.props.colors[i].id === colorId)</span><br><span class="line">  <span class="built_in">break</span>;</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="built_in">return</span> this.props.colors[i];</span><br><span class="line">&#125;,</span><br><span class="line">shouldComponentUpdate: <span class="keyword">function</span>(nextProps, nextState) &#123;</span><br><span class="line">  <span class="built_in">return</span> this.state.selectedColor.id !== nextState.selectedColor.id;</span><br><span class="line">&#125;,</span><br><span class="line">render: <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">console.log(<span class="string">'Render Color Panel'</span>);</span><br><span class="line"><span class="built_in">return</span> (</span><br><span class="line"> &lt;div&gt;</span><br><span class="line"> &lt;ColorDisplay selectedColor=&#123;this.state.selectedColor&#125;/&gt;</span><br><span class="line">&lt;ColorBar colors=&#123;this.props.colors&#125; onColorHover=&#123;this.onColorHover&#125; /&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line">);</span><br><span class="line">&#125;,</span><br><span class="line">onColorHover: <span class="keyword">function</span>(colorId) &#123;</span><br><span class="line">this.setState(&#123;selectedColor: this.getSelectedColor(colorId)&#125;);</span><br><span class="line">&#125;</span><br><span class="line">&#125;);</span><br><span class="line">React.render(&lt;ColorPanel/&gt;, document.getElementById(<span class="string">'demo'</span>));</span><br></pre></td></tr></table></figure>
+<h4 id="清单_9-_colorBar-jsx_代码">清单 9. colorBar.jsx 代码</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">var ColorBar = React.createClass(&#123;</span><br><span class="line">shouldComponentUpdate: <span class="keyword">function</span>(nextProps, nextState) &#123;</span><br><span class="line">  <span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;,</span><br><span class="line">render: <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line"> console.log(<span class="string">'Render Color Bar Component'</span>);</span><br><span class="line"> <span class="built_in">return</span> (</span><br><span class="line"> &lt;ul&gt;</span><br><span class="line"> &#123;this.props.colors.map(<span class="keyword">function</span>(color)&#123;</span><br><span class="line">  <span class="built_in">return</span> (</span><br><span class="line"> &lt;li key=&#123;color.id&#125; </span><br><span class="line">onMouseOver=&#123;this.props.onColorHover.bind(null, color.id)&#125; </span><br><span class="line">className=&#123;color.value&#125;&gt;&lt;/li&gt;</span><br><span class="line">  )</span><br><span class="line"> &#125;, this)&#125;</span><br><span class="line"> &lt;/ul&gt;</span><br><span class="line">);</span><br><span class="line">&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="清单_10-_colorDisplay-jsx_代码">清单 10. colorDisplay.jsx 代码</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">var ColorDisplay = React.createClass(&#123;</span><br><span class="line">shouldComponentUpdate: <span class="keyword">function</span>(nextProps, nextState) &#123;</span><br><span class="line">  <span class="built_in">return</span> this.props.selectedColor.id !== nextProps.selectedColor.id;</span><br><span class="line">&#125;,</span><br><span class="line">render: <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line"> console.log(<span class="string">'Render Color Display Component'</span>);</span><br><span class="line"><span class="built_in">return</span> (</span><br><span class="line">&lt;div className=<span class="string">"color-display"</span>&gt;</span><br><span class="line">&lt;div className=&#123;this.props.selectedColor.value&#125;&gt;</span><br><span class="line">&#123;this.props.selectedColor.title&#125;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">);</span><br><span class="line">&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>这个实例的实现原理是：当用户把鼠标停留在某一个 colorbar 上时，就会触发 mouseover 上绑定的 onColorHover 事件，同时传递了当前颜色的 ID。然后，onColorHover 事件根据传递进来的颜色 ID 重置 selectedColor。selectedColor 作为 ColorDisplay 这个 Component 的 state 值，当它发生变化时引发的虚拟 DOM 节点的重新 render 进而引起了真实 DOM 节点的重新渲染。于是页面上所显示的文字内容和颜色类型转换成为我们所选择的对应值。<br>在实际的代码逻辑中，Color Bar 的颜色为六种固定颜色，于是我们把这些颜色的值（value）的定义存放在父级 Component 的 props 中，通过 getDefaultProps 来设置默认的属性以及初始时所选着的颜色（此处选择默认 ID 为 1 的颜色）。接下来在 ColorPanel 中设置一个 selectedColor 作为内部状态值 state 表示当前所选中的颜色。它的定义和初始化是在 getInitialState 中实现的，而修改则是在 getSelectedColor 方法中完成的（根据选中的 color ID 来获取 color 对象）。在这里，所有的 Color 都是 Component 的 props，可以通过 this.props.colors 获取所有颜色值。<br>接下来是 ColorBar。在 ColorBar 里面使用 this.props.colors.map 来遍历生成了多个 li。它的原理跟 Array.prototype.map 类似，this.props.colors 其实是一个 array，包含了所有的设置的颜色。Map 方法，就是把 array 里面的 item 取出来传递到回调函数中。回调函数会把传进来的 color 值填充到颜色条的模板中。在这个模板的 li 上也绑定了 mouseover 事件，提前把对应的颜色绑定在了 onColorHover 这个属性方法中，当回调函数返回了 li 形成一个新的 array 填充到 Color Bar 的 ul 中。<br>最后让我们来看一下 ColorDisplay，它是一个负责显示当前选中颜色的提示框。父级 Component 中的 selectedColor 通过一个 props 传递到子级 Component 中并通过 this.props.selectedColor 获取。 然后子级 Component 通过所获取到的 selectedColor 值来确定颜色类型（class）决定所需要显示的文字。<br>那么颜色提示是何时更新的呢？答案是当父级 Component 的 state selectedColor 发生更新，也即 setState 方法被调用时。当用户把鼠标放在某个颜色块时，就触发 onColorHover 这个由父节点传进来的 props 方法，在这个方法内我们会调用 setState 方法，根据传进来的 color id 值重置这个 selectedColor，从而更新 color Display 的颜色提示。<br>React 默认只要 setState 方法的调用，就会更新这个 Component。虽然是虚拟的 Component 的更新，但是有时候我们可以手动的去决定是否有必要更新这个 Component，这时候就可以采用 Component 生命周期里面的 shouldComponentUpdate 方法。比如说在文章实例中，当用户先把鼠标从某一个颜色条上移除，然后又移回到之前的颜色条上时。此时用户所选择的还是同一种颜色，即 selectedColor 没有变化时，我们可以使用 shouldComponentUpdate 来避免 setState 引起的二次更新。判断当前的 selectedColor.id 和之前的 selectedColor.id 值的区别，此时两者没有差异则返回 false，Color Panel 不会被重新渲染了。同理，Color Bar 其实是一个固定的 Component，完全不需要每次根据 selectedColor 来重新渲染，所以我们可以在这个 component 的 shouldComponentUpdate 直接返回 false。</p>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/React-Js/" rel="tag">#React.Js</a>
+          
+            <a href="/tags/前端/" rel="tag">#前端</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/11/07/React-Js入门-三/" rel="next" title="React.Js (三)">
+                <i class="fa fa-chevron-left"></i> React.Js (三)
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/11/09/这样去写你的HTML/" rel="prev" title="这样去写你的HTML">
+                这样去写你的HTML <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+        </div>
+
+        
+
+
+        
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2015/11/08/React-Js入门-完/"
+           data-title="React.Js 入门(完)" data-url="http://liuzhenkn.gitHub.io/2015/11/08/React-Js入门-完/">
+      </div>
+    
+  </div>
+
+
+      </div>
+
+      
+        
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/images/picture.jpg" alt="执凉" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">执凉</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description">努力中的前端程序员</p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            
+              <span class="site-state-item-count">16</span>
+              <span class="site-state-item-name">标签</span>
+              
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://www.facebook.com/profile.php?id=100009724052727&sk=about" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> Facebook
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/liuzhenkn" target="_blank">
+                  
+                    <i class="fa fa-github"></i> GitHub
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:314339793@qq.com" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> Email
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+            <p class="site-author-name">Links</p>
+            
+              <span class="links-of-author-item">
+                <a href="http://macshuo.com/" target="_blank">MacTalk</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://blog.ymming.com/" target="_blank">Ymming</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://blog.waydrow.com/" target="_blank">Waydrow</a>
+              </span>
+            
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#清单_5-_从父节点中获取_state"><span class="nav-number">1.</span> <span class="nav-text">清单 5. 从父节点中获取 state</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#清单_6-_通过_getDefaultProps_获取_props_初始值"><span class="nav-number">2.</span> <span class="nav-text">清单 6. 通过 getDefaultProps 获取 props 初始值</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例分析"><span class="nav-number"></span> <span class="nav-text">实例分析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#清单_7-_HTML_文件中引用的_JSX_文件"><span class="nav-number">1.</span> <span class="nav-text">清单 7. HTML 文件中引用的 JSX 文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#清单_8-_colorPanel-jsx_代码"><span class="nav-number">2.</span> <span class="nav-text">清单 8. colorPanel.jsx 代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#清单_9-_colorBar-jsx_代码"><span class="nav-number">3.</span> <span class="nav-text">清单 9. colorBar.jsx 代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#清单_10-_colorDisplay-jsx_代码"><span class="nav-number">4.</span> <span class="nav-text">清单 10. colorDisplay.jsx 代码</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+      
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="icon-next-heart fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">执凉</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+
+  
+    
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"liuzhenkn"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+    
+     
+
+
+    
+  
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+<script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+<script type="text/javascript" src="/js/motion.js?v=0.4.5.2" id="motion.global"></script>
+
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    motionMiddleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  <script type="text/javascript" src="/js/bootstrap.js"></script>
+
+  
+  
+
+  
+  
+
+</body>
+</html>
