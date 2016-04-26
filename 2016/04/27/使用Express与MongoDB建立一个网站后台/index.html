@@ -37,7 +37,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="React.Js,前端," />
+  <meta name="keywords" content="前端,后台," />
 
 
 
@@ -53,24 +53,22 @@
 
 
 
-<meta name="description" content="接触前端两年了也用过bootstrap、Angular.Js等框架，最近一直听别人再说React.Js，于是便打算学习一下。
-我主要参考了: React中文文档 (http://reactjs.cn/)              ReactJs入门教程 (http://www.cnblogs.com/Leo_wl/p/4489197.html)
-React.Js 简介React 起源于 Faceb">
+<meta name="description" content="本学期学习软件工程这门课程，所以老师要求分组完成一个项目————联想笔记本电脑销售网站，由于我们小组没有了解网站后台技术的同学，所以我就打算使用Node.js建立网站后台，数据库使用mongodb，在学习了一段时间之后，我将最近学习到的知识总结下来。
+什么是ExpressExpress 是一个基于 Node.js 平台的极简、灵活的 web 应用开发框架，它提供一系列强大的特性，帮助你创建各种 W">
 <meta property="og:type" content="article">
-<meta property="og:title" content="React.Js 入门(一)">
-<meta property="og:url" content="http://liuzhenkn.gitHub.io/2015/11/05/ReactJs入门-一/index.html">
+<meta property="og:title" content="使用Express与MongoDB建立一个网站后台">
+<meta property="og:url" content="http://liuzhenkn.gitHub.io/2016/04/27/使用Express与MongoDB建立一个网站后台/index.html">
 <meta property="og:site_name" content="执凉's blog">
-<meta property="og:description" content="接触前端两年了也用过bootstrap、Angular.Js等框架，最近一直听别人再说React.Js，于是便打算学习一下。
-我主要参考了: React中文文档 (http://reactjs.cn/)              ReactJs入门教程 (http://www.cnblogs.com/Leo_wl/p/4489197.html)
-React.Js 简介React 起源于 Faceb">
-<meta property="og:image" content="http://liuzhenkn.gitHub.io/images/20151105/react.png">
-<meta property="og:image" content="http://liuzhenkn.gitHub.io/images/20151105/component.png">
-<meta property="og:updated_time" content="2015-11-06T13:56:51.178Z">
+<meta property="og:description" content="本学期学习软件工程这门课程，所以老师要求分组完成一个项目————联想笔记本电脑销售网站，由于我们小组没有了解网站后台技术的同学，所以我就打算使用Node.js建立网站后台，数据库使用mongodb，在学习了一段时间之后，我将最近学习到的知识总结下来。
+什么是ExpressExpress 是一个基于 Node.js 平台的极简、灵活的 web 应用开发框架，它提供一系列强大的特性，帮助你创建各种 W">
+<meta property="og:image" content="http://liuzhenkn.gitHub.io/images/20160426/1.png">
+<meta property="og:image" content="http://liuzhenkn.gitHub.io/images/20160426/2.png">
+<meta property="og:image" content="http://liuzhenkn.gitHub.io/images/20160426/3.png">
+<meta property="og:updated_time" content="2016-04-26T12:17:21.301Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="React.Js 入门(一)">
-<meta name="twitter:description" content="接触前端两年了也用过bootstrap、Angular.Js等框架，最近一直听别人再说React.Js，于是便打算学习一下。
-我主要参考了: React中文文档 (http://reactjs.cn/)              ReactJs入门教程 (http://www.cnblogs.com/Leo_wl/p/4489197.html)
-React.Js 简介React 起源于 Faceb">
+<meta name="twitter:title" content="使用Express与MongoDB建立一个网站后台">
+<meta name="twitter:description" content="本学期学习软件工程这门课程，所以老师要求分组完成一个项目————联想笔记本电脑销售网站，由于我们小组没有了解网站后台技术的同学，所以我就打算使用Node.js建立网站后台，数据库使用mongodb，在学习了一段时间之后，我将最近学习到的知识总结下来。
+什么是ExpressExpress 是一个基于 Node.js 平台的极简、灵活的 web 应用开发框架，它提供一系列强大的特性，帮助你创建各种 W">
 
 
 
@@ -82,7 +80,7 @@ React.Js 简介React 起源于 Faceb">
   };
 </script>
 
-  <title> React.Js 入门(一) | 执凉's blog </title>
+  <title> 使用Express与MongoDB建立一个网站后台 | 执凉's blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -241,7 +239,7 @@ React.Js 简介React 起源于 Faceb">
             
             
               
-                React.Js 入门(一)
+                使用Express与MongoDB建立一个网站后台
               
             
           </h1>
@@ -250,8 +248,8 @@ React.Js 简介React 起源于 Faceb">
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2015-11-05T12:44:36+08:00" content="2015-11-05">
-              2015-11-05
+            <time itemprop="dateCreated" datetime="2016-04-27T20:27:38+08:00" content="2016-04-27">
+              2016-04-27
             </time>
           </span>
 
@@ -260,8 +258,8 @@ React.Js 简介React 起源于 Faceb">
               &nbsp; | &nbsp; 分类于
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/技术/" itemprop="url" rel="index">
-                    <span itemprop="name">技术</span>
+                  <a href="/categories/文章/" itemprop="url" rel="index">
+                    <span itemprop="name">文章</span>
                   </a>
                 </span>
 
@@ -276,8 +274,8 @@ React.Js 简介React 起源于 Faceb">
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/11/05/ReactJs入门-一/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/11/05/ReactJs入门-一/" itemprop="commentsCount"></span>
+                <a href="/2016/04/27/使用Express与MongoDB建立一个网站后台/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/27/使用Express与MongoDB建立一个网站后台/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -296,23 +294,11 @@ React.Js 简介React 起源于 Faceb">
       
 
       
-        <span itemprop="articleBody"><p><img src="/images/20151105/react.png" alt=""><br>接触前端两年了也用过bootstrap、Angular.Js等框架，最近一直听别人再说React.Js，于是便打算学习一下。</p>
-<p>我主要参考了: React中文文档 (<a href="http://reactjs.cn/" target="_blank" rel="external">http://reactjs.cn/</a>)<br>              ReactJs入门教程 (<a href="http://www.cnblogs.com/Leo_wl/p/4489197.html" target="_blank" rel="external">http://www.cnblogs.com/Leo_wl/p/4489197.html</a>)</p>
-<h3 id="React-Js_简介">React.Js 简介</h3><p>React 起源于 Facebook 的内部项目，因为该公司对市场上所有 JavaScript MVC 框架，都不满意，就决定自己写一套，用来架设 Instagram 的网站。做出来以后，发现这套东西很好用，就在2013年5月开源了。由于 React 的设计思想极其独特，属于革命性创新，性能出众，代码逻辑却非常简单。所以，越来越多的人开始关注和使用，认为它可能是将来 Web 开发的主流工具。<br><a id="more"></a></p>
-<h3 id="对React-Js的认识及优点">对React.Js的认识及优点</h3><h4 id="误区">误区</h4><ul>
-<li>React不是一个完整的MVC框架，最多可以认为是MVC中的V（View），甚至React并不非常认可MVC开发模式；</li>
-<li>React的服务器端Render能力只能算是一个锦上添花的功能，并不是其核心出发点，事实上React官方站点几乎没有提及其在服务器端的应用；</li>
-<li>有人拿React和Web Component相提并论，但两者并不是完全的竞争关系，你完全可以用React去开发一个真正的Web Component；</li>
-<li>React不是一个新的模板语言，JSX只是一个表象，没有JSX的React也能工作。<br>好吧，其实我还暂时有些不理解上面的部分所讲，先复制过来，以后遇到再来看。</li>
-</ul>
-<h4 id="组件化">组件化</h4><p>所谓组件，即封装起来的具有独立功能的UI部件。React推荐以组件的方式去重新思考UI构成，将UI上每一个功能相对独立的模块定义成组件，然后将小的组件通过组合或者嵌套的方式构成大的组件，最终完成整体UI的构建。<br>在React中，你按照界面模块自然划分的方式来组织和编写你的代码，对于评论界面而言，整个UI是一个通过小组件构成的大组件，每个组件只关心自己部分的逻辑，彼此独立。<br><img src="/images/20151105/component.png" alt=""></p>
-<p>React认为一个组件应该具有如下特征：<br>（1）可组合（Composeable）：一个组件易于和其它组件一起使用，或者嵌套在另一个组件内部。如果一个组件内部创建了另一个组件，那么说父组件拥有（own）它创建的子组件，通过这个特性，一个复杂的UI可以拆分成多个简单的UI组件；<br>（2）可重用（Reusable）：每个组件都是具有独立功能的，它可以被使用在多个UI场景；<br>（3）可维护（Maintainable）：每个小的组件仅仅包含自身的逻辑，更容易被理解和维护；</p>
-<h3 id="下载React-Js">下载React.Js</h3><p>ReactJs下载非常简单，下载地址<a href="http://facebook.github.io/react/downloads.html。" target="_blank" rel="external">http://facebook.github.io/react/downloads.html。</a><br>下载完成后，我么看到的是一个压缩包。解压后，我们新建一个html文件，引用react.js和JSXTransformer.js这两个js文件。html模板如下(js路径改成自己的)。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;script src=<span class="string">"build/react.js"</span>&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script src=<span class="string">"build/JSXTransformer.js"</span>&gt;&lt;/script&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line">    &lt;div id=<span class="string">"container"</span>&gt;&lt;/div&gt;</span><br><span class="line">    &lt;script <span class="built_in">type</span>=<span class="string">"text/jsx"</span>&gt;</span><br><span class="line">      // ** Our code goes here! **</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
-<p>这里大家可能会奇怪，<strong>为什么script的type是text/jsx,这是因为 React 独有的 JSX 语法，跟 JavaScript 不兼容</strong>。凡是使用 JSX 的地方，都要加上 type=”text/jsx” 。 其次，React 提供两个库： react.js 和 JSXTransformer.js ，它们必须首先加载。其中，JSXTransformer.js 的作用是将 JSX 语法转为 JavaScript 语法。这一步很消耗时间，实际上线的时候，应该将它放到服务器完成。</p>
-<p>到这里我们就可以开始编写代码了，首先我们先来认识一下ReactJs里面的React.render方法：</p>
-<p>React.render 是 React 的最基本方法，用于将模板转为 HTML 语言，并插入指定的 DOM 节点。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">React.render(</span><br><span class="line">        &lt;h1&gt;Hello, world!&lt;/h1&gt;,</span><br><span class="line">        document.getElementById(<span class="string">'container'</span>)</span><br><span class="line">      );</span><br></pre></td></tr></table></figure></p>
-<p><strong>react并不依赖jQuery，当然我们可以使用jQuery，但是render里面第二个参数必须使用JavaScript原生的getElementByID方法，不能使用jQuery来选取DOM节点。</strong><br>然后，在浏览器打开这个页面，就可以看到浏览器显示一个大大的Hello，world。</p>
-<p>到这里，恭喜，你已经步入了React.JS的大门。下面，让我们来进一步学习React.Js吧!</p>
+        <span itemprop="articleBody"><p>本学期学习软件工程这门课程，所以老师要求分组完成一个项目————联想笔记本电脑销售网站，由于我们小组没有了解网站后台技术的同学，所以我就打算使用Node.js建立网站后台，数据库使用mongodb，在学习了一段时间之后，我将最近学习到的知识总结下来。</p>
+<h3 id="什么是Express">什么是Express</h3><p>Express 是一个基于 Node.js 平台的极简、灵活的 web 应用开发框架，它提供一系列强大的特性，帮助你创建各种 Web 和移动设备应用。</p>
+<h3 id="安装Express">安装Express</h3><p>假定我们已经安装好了Node.js,接下来我们需要为我们的应用创建一个目录。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install express -g</span><br><span class="line">express sale</span><br></pre></td></tr></table></figure></p>
+<p>执行完后会在默认位置产生一个sale项目，里面的结构如下：<br><img src="/images/20160426/1.png" alt=""><br>接下来我们进入这个文件夹，启动这个项目：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> sales</span><br><span class="line">npm start</span><br></pre></td></tr></table></figure></p>
+<p>如果发生错误缺少module,我们只需使用npm install 命令挨个再下载下来就好。<br>成功就会显示这样：<br><img src="/images/20160426/2.png" alt=""><br>然后我们访问127.0.0.1:3000(默认端口3000)，如果显示是这样就说明你成功了：<br><img src="/images/20160426/3.png" alt=""><br>是不是很简单？</p>
 </span>
       
     </div>
@@ -321,9 +307,9 @@ React.Js 简介React 起源于 Faceb">
       
         <div class="post-tags">
           
-            <a href="/tags/React-Js/" rel="tag">#React.Js</a>
-          
             <a href="/tags/前端/" rel="tag">#前端</a>
+          
+            <a href="/tags/后台/" rel="tag">#后台</a>
           
         </div>
       
@@ -332,17 +318,13 @@ React.Js 简介React 起源于 Faceb">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/11/04/执凉的大三小记/" rel="next" title="执凉的大三小记">
-                <i class="fa fa-chevron-left"></i> 执凉的大三小记
+              <a href="/2016/03/21/错题总结/" rel="next" title="错题总结（不断更新）">
+                <i class="fa fa-chevron-left"></i> 错题总结（不断更新）
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/11/06/React-Js入门-二/" rel="prev" title="React.Js入门(二)">
-                React.Js入门(二) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -369,8 +351,8 @@ React.Js 简介React 起源于 Faceb">
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/11/05/ReactJs入门-一/"
-           data-title="React.Js 入门(一)" data-url="http://liuzhenkn.gitHub.io/2015/11/05/ReactJs入门-一/">
+      <div class="ds-thread" data-thread-key="2016/04/27/使用Express与MongoDB建立一个网站后台/"
+           data-title="使用Express与MongoDB建立一个网站后台" data-url="http://liuzhenkn.gitHub.io/2016/04/27/使用Express与MongoDB建立一个网站后台/">
       </div>
     
   </div>
@@ -414,7 +396,7 @@ React.Js 简介React 起源于 Faceb">
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-count">12</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -501,7 +483,7 @@ React.Js 简介React 起源于 Faceb">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#React-Js_简介"><span class="nav-number">1.</span> <span class="nav-text">React.Js 简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对React-Js的认识及优点"><span class="nav-number">2.</span> <span class="nav-text">对React.Js的认识及优点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#误区"><span class="nav-number">2.1.</span> <span class="nav-text">误区</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#组件化"><span class="nav-number">2.2.</span> <span class="nav-text">组件化</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下载React-Js"><span class="nav-number">3.</span> <span class="nav-text">下载React.Js</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是Express"><span class="nav-number">1.</span> <span class="nav-text">什么是Express</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Express"><span class="nav-number">2.</span> <span class="nav-text">安装Express</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
