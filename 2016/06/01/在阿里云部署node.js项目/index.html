@@ -53,22 +53,22 @@
 
 
 
-<meta name="description" content="作为一个以前没有接触过后台开发的前端，我终于把上次提到的笔记本销售网站完成的差不多了，接下来面临的一个问题就是如何将我的web项目部署到服务器上。在网上查了一些教程之后，我决定用阿里云的学生优惠的服务器，系统是centOS5.4，虽然以前用过Linux系统，对命令行操作有所了解，但是在下载很多软件的时候确实也有点头疼，所以我决定把部署过程记录下来。
+<meta name="description" content="作为一个以前没有接触过后台开发的前端，我终于把上次提到的笔记本销售网站完成的差不多了，接下来面临的一个问题就是如何将我的web项目部署到服务器上。在网上查了一些教程之后，我决定用阿里云的学生优惠的服务器，系统是centOS6.5，虽然以前用过Linux系统，对命令行操作有所了解，但是在下载很多软件的时候确实也有点头疼，所以我决定把部署过程记录下来。
 配置服务器环境首先我们拿到了服务器后我们登录阿里">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在阿里云部署node.js项目">
 <meta property="og:url" content="http://liuzhenkn.gitHub.io/2016/06/01/在阿里云部署node.js项目/index.html">
 <meta property="og:site_name" content="执凉's blog">
-<meta property="og:description" content="作为一个以前没有接触过后台开发的前端，我终于把上次提到的笔记本销售网站完成的差不多了，接下来面临的一个问题就是如何将我的web项目部署到服务器上。在网上查了一些教程之后，我决定用阿里云的学生优惠的服务器，系统是centOS5.4，虽然以前用过Linux系统，对命令行操作有所了解，但是在下载很多软件的时候确实也有点头疼，所以我决定把部署过程记录下来。
+<meta property="og:description" content="作为一个以前没有接触过后台开发的前端，我终于把上次提到的笔记本销售网站完成的差不多了，接下来面临的一个问题就是如何将我的web项目部署到服务器上。在网上查了一些教程之后，我决定用阿里云的学生优惠的服务器，系统是centOS6.5，虽然以前用过Linux系统，对命令行操作有所了解，但是在下载很多软件的时候确实也有点头疼，所以我决定把部署过程记录下来。
 配置服务器环境首先我们拿到了服务器后我们登录阿里">
 <meta property="og:image" content="http://liuzhenkn.gitHub.io/images/20160601/1.png">
 <meta property="og:image" content="http://liuzhenkn.gitHub.io/images/20160601/2.png">
 <meta property="og:image" content="http://liuzhenkn.gitHub.io/images/20160601/3.png">
 <meta property="og:image" content="http://liuzhenkn.gitHub.io/images/20160601/4.png">
-<meta property="og:updated_time" content="2016-06-01T13:25:15.536Z">
+<meta property="og:updated_time" content="2016-06-01T13:26:14.447Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在阿里云部署node.js项目">
-<meta name="twitter:description" content="作为一个以前没有接触过后台开发的前端，我终于把上次提到的笔记本销售网站完成的差不多了，接下来面临的一个问题就是如何将我的web项目部署到服务器上。在网上查了一些教程之后，我决定用阿里云的学生优惠的服务器，系统是centOS5.4，虽然以前用过Linux系统，对命令行操作有所了解，但是在下载很多软件的时候确实也有点头疼，所以我决定把部署过程记录下来。
+<meta name="twitter:description" content="作为一个以前没有接触过后台开发的前端，我终于把上次提到的笔记本销售网站完成的差不多了，接下来面临的一个问题就是如何将我的web项目部署到服务器上。在网上查了一些教程之后，我决定用阿里云的学生优惠的服务器，系统是centOS6.5，虽然以前用过Linux系统，对命令行操作有所了解，但是在下载很多软件的时候确实也有点头疼，所以我决定把部署过程记录下来。
 配置服务器环境首先我们拿到了服务器后我们登录阿里">
 
 
@@ -295,7 +295,7 @@
       
 
       
-        <span itemprop="articleBody"><p>作为一个以前没有接触过后台开发的前端，我终于把上次提到的笔记本销售网站完成的差不多了，接下来面临的一个问题就是如何将我的web项目部署到服务器上。<br>在网上查了一些教程之后，我决定用阿里云的学生优惠的服务器，系统是centOS5.4，虽然以前用过Linux系统，对命令行操作有所了解，但是在下载很多软件的时候确实也有点头疼，所以我决定把部署过程记录下来。</p>
+        <span itemprop="articleBody"><p>作为一个以前没有接触过后台开发的前端，我终于把上次提到的笔记本销售网站完成的差不多了，接下来面临的一个问题就是如何将我的web项目部署到服务器上。<br>在网上查了一些教程之后，我决定用阿里云的学生优惠的服务器，系统是centOS6.5，虽然以前用过Linux系统，对命令行操作有所了解，但是在下载很多软件的时候确实也有点头疼，所以我决定把部署过程记录下来。</p>
 <h3 id="配置服务器环境">配置服务器环境</h3><p>首先我们拿到了服务器后我们登录阿里云去连接服务器，在这里我使用的是Xshell去登录服务器(当然你要先去阿里云控制台把云服务器启动)。<br>下载安装完Xshell后，打开新建会话，配置如下图：<br><img src="/images/20160601/1.png" alt=""><br>接下来点到用户身份验证<br><img src="/images/20160601/2.png" alt=""><br>登入成功后，就是熟悉的命令行操作了，我就不贴图了。<br>我们先将yum更新<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y update</span><br></pre></td></tr></table></figure></p>
 <p>然后，我们将使用最新源代码构建Node.js，要进行软件的安装，需要一组用来编译源代码的开发工具：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y groupinstall <span class="string">"Development Tools"</span></span><br></pre></td></tr></table></figure></p>
 <h3 id="安装node-js">安装node.js</h3><p>首先，先找一个安装位置，我安装在 /usr/src文件夹内<br>接下来从Node.js站点获取压缩档源代码，解压文件，并进入文件夹。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget http://nodejs.org/dist/v0.<span class="number">10.18</span>/node-v0.<span class="number">10.18</span>.tar.gz </span><br><span class="line">tar zxf node-v0.<span class="number">10.18</span>.tar.gz </span><br><span class="line"><span class="built_in">cd</span> node-v0.<span class="number">10.18</span></span><br></pre></td></tr></table></figure></p>
