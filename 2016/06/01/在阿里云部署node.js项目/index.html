@@ -37,7 +37,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Javascript,前端," />
+  <meta name="keywords" content="技术," />
 
 
 
@@ -53,20 +53,23 @@
 
 
 
-<meta name="description" content="浮点数精确计算Javascript的浮点数运算，总是有些奇怪的结果，所以就在网上查了一下发现了原因:由于有些小数用二进制表示时是无穷的，故有些精确度丢失是无法避免的。如：0.2+0.1的的运算结果实际上是：0.30000000000000004还有:123var i = 0.07;var r = i*100;alert(r);
-结果是7.0000000000000001，但这明显不是我们想要的结果">
+<meta name="description" content="作为一个以前没有接触过后台开发的前端，我终于把上次提到的笔记本销售网站完成的差不多了，接下来面临的一个问题就是如何将我的web项目部署到服务器上。在网上查了一些教程之后，我决定用阿里云的学生优惠的服务器，系统是centOS5.4，虽然以前用过Linux系统，对命令行操作有所了解，但是在下载很多软件的时候确实也有点头疼，所以我决定把部署过程记录下来。
+配置服务器环境首先我们拿到了服务器后我们登录阿里">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Javascript浮点数运算问题">
-<meta property="og:url" content="http://liuzhenkn.gitHub.io/2015/11/10/Javascript浮点数运算问题/index.html">
+<meta property="og:title" content="在阿里云部署node.js项目">
+<meta property="og:url" content="http://liuzhenkn.gitHub.io/2016/06/01/在阿里云部署node.js项目/index.html">
 <meta property="og:site_name" content="执凉's blog">
-<meta property="og:description" content="浮点数精确计算Javascript的浮点数运算，总是有些奇怪的结果，所以就在网上查了一下发现了原因:由于有些小数用二进制表示时是无穷的，故有些精确度丢失是无法避免的。如：0.2+0.1的的运算结果实际上是：0.30000000000000004还有:123var i = 0.07;var r = i*100;alert(r);
-结果是7.0000000000000001，但这明显不是我们想要的结果">
-<meta property="og:image" content="http://liuzhenkn.gitHub.io/images/20151110/example.png">
-<meta property="og:updated_time" content="2016-04-18T15:15:06.394Z">
+<meta property="og:description" content="作为一个以前没有接触过后台开发的前端，我终于把上次提到的笔记本销售网站完成的差不多了，接下来面临的一个问题就是如何将我的web项目部署到服务器上。在网上查了一些教程之后，我决定用阿里云的学生优惠的服务器，系统是centOS5.4，虽然以前用过Linux系统，对命令行操作有所了解，但是在下载很多软件的时候确实也有点头疼，所以我决定把部署过程记录下来。
+配置服务器环境首先我们拿到了服务器后我们登录阿里">
+<meta property="og:image" content="http://liuzhenkn.gitHub.io/images/20160601/1.png">
+<meta property="og:image" content="http://liuzhenkn.gitHub.io/images/20160601/2.png">
+<meta property="og:image" content="http://liuzhenkn.gitHub.io/images/20160601/3.png">
+<meta property="og:image" content="http://liuzhenkn.gitHub.io/images/20160601/4.png">
+<meta property="og:updated_time" content="2016-06-01T13:22:46.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Javascript浮点数运算问题">
-<meta name="twitter:description" content="浮点数精确计算Javascript的浮点数运算，总是有些奇怪的结果，所以就在网上查了一下发现了原因:由于有些小数用二进制表示时是无穷的，故有些精确度丢失是无法避免的。如：0.2+0.1的的运算结果实际上是：0.30000000000000004还有:123var i = 0.07;var r = i*100;alert(r);
-结果是7.0000000000000001，但这明显不是我们想要的结果">
+<meta name="twitter:title" content="在阿里云部署node.js项目">
+<meta name="twitter:description" content="作为一个以前没有接触过后台开发的前端，我终于把上次提到的笔记本销售网站完成的差不多了，接下来面临的一个问题就是如何将我的web项目部署到服务器上。在网上查了一些教程之后，我决定用阿里云的学生优惠的服务器，系统是centOS5.4，虽然以前用过Linux系统，对命令行操作有所了解，但是在下载很多软件的时候确实也有点头疼，所以我决定把部署过程记录下来。
+配置服务器环境首先我们拿到了服务器后我们登录阿里">
 
 
 
@@ -78,7 +81,7 @@
   };
 </script>
 
-  <title> Javascript浮点数运算问题 | 执凉's blog </title>
+  <title> 在阿里云部署node.js项目 | 执凉's blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -237,7 +240,7 @@
             
             
               
-                Javascript浮点数运算问题
+                在阿里云部署node.js项目
               
             
           </h1>
@@ -246,8 +249,8 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2015-11-10T12:57:39+08:00" content="2015-11-10">
-              2015-11-10
+            <time itemprop="dateCreated" datetime="2016-06-01T16:27:38+08:00" content="2016-06-01">
+              2016-06-01
             </time>
           </span>
 
@@ -256,8 +259,8 @@
               &nbsp; | &nbsp; 分类于
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/技术/" itemprop="url" rel="index">
-                    <span itemprop="name">技术</span>
+                  <a href="/categories/文章/" itemprop="url" rel="index">
+                    <span itemprop="name">文章</span>
                   </a>
                 </span>
 
@@ -272,8 +275,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/11/10/Javascript浮点数运算问题/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/11/10/Javascript浮点数运算问题/" itemprop="commentsCount"></span>
+                <a href="/2016/06/01/在阿里云部署node.js项目/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/01/在阿里云部署node.js项目/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -292,14 +295,22 @@
       
 
       
-        <span itemprop="articleBody"><h3 id="浮点数精确计算">浮点数精确计算</h3><p>Javascript的浮点数运算，总是有些奇怪的结果，所以就在网上查了一下发现了原因:<br>由于有些小数用二进制表示时是无穷的，故有些精确度丢失是无法避免的。<br>如：0.2+0.1的的运算结果实际上是：0.30000000000000004<br><img src="/images/20151110/example.png" alt=""><br>还有:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var i = <span class="number">0.07</span>;</span><br><span class="line">var r = i*<span class="number">100</span>;</span><br><span class="line">alert(r);</span><br></pre></td></tr></table></figure></p>
-<p>结果是7.0000000000000001，但这明显不是我们想要的结果。<br>在JavsScript中，变量在存储时并不区分number和float类型，而是统一按float存储。而javascript使用IEEE 754-2008 标准定义的64bit浮点格式存储number，按照IEEE 754的定义： <a href="http://en.wikipedia.org/wiki/IEEE_754-2008" target="_blank" rel="external">http://en.wikipedia.org/wiki/IEEE_754-2008</a><br>decimal64对应的整形部分长度为10,小数部分长度为16，所以默认的计算结果为“7.0000000000000001”，如最后一个小数为0，则取1作为有效数字标志。<br>类似地，我们可以想像，1/3的结果应该是0.3333333333333333。<br>为了得到我们想要的结果，我们需要校正这个值。</p>
-<h4 id="解决方法">解决方法</h4><p>通过Math.pow(x,y)函数，返回x的y次幂。<br>如果结果是虚数或负数，则该方法将返回 NaN。如果由于指数过大而引起浮点溢出，则该方法将返回 Infinity。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">//除法函数，用来得到精确的除法结果     </span><br><span class="line">//调用：division(arg1,arg2)      </span><br><span class="line">//返回值：arg1除以arg2的精确结果   </span><br><span class="line"><span class="keyword">function</span> division(arg1,arg2)&#123;   </span><br><span class="line">    var t1=<span class="number">0</span>,t2=<span class="number">0</span>,r1,r2;   </span><br><span class="line">    try&#123;t1=arg1.toString().split(<span class="string">"."</span>)[<span class="number">1</span>].length&#125;catch(e)&#123;&#125;   </span><br><span class="line">    try&#123;t2=arg2.toString().split(<span class="string">"."</span>)[<span class="number">1</span>].length&#125;catch(e)&#123;&#125;   </span><br><span class="line">    with(Math)&#123;   </span><br><span class="line">        r1=Number(arg1.toString().replace(<span class="string">"."</span>,<span class="string">""</span>));   </span><br><span class="line">        r2=Number(arg2.toString().replace(<span class="string">"."</span>,<span class="string">""</span>));    </span><br><span class="line">        <span class="built_in">return</span> (r1/r2)*pow(<span class="number">10</span>,t2-t1);   </span><br><span class="line">    &#125;   </span><br><span class="line">&#125;   </span><br><span class="line">  </span><br><span class="line">//乘法函数，用来得到精确的乘法结果       </span><br><span class="line">//调用：multiply(arg1,arg2)      </span><br><span class="line">//返回值：arg1乘以arg2的精确结果      </span><br><span class="line"><span class="keyword">function</span> multiply(arg1,arg2)&#123;   </span><br><span class="line">    arg1=String(arg1);var i=arg1.length-arg1.indexOf(<span class="string">"."</span>)-<span class="number">1</span>;i=(i&gt;=arg1.length)?<span class="number">0</span>:i;   </span><br><span class="line">    arg2=String(arg2);var j=arg2.length-arg2.indexOf(<span class="string">"."</span>)-<span class="number">1</span>;j=(j&gt;=arg2.length)?<span class="number">0</span>:j;   </span><br><span class="line">    <span class="built_in">return</span> arg1.replace(<span class="string">"."</span>,<span class="string">""</span>)*arg2.replace(<span class="string">"."</span>,<span class="string">""</span>)/Math.pow(<span class="number">10</span>,i+j);   </span><br><span class="line">&#125;    </span><br><span class="line">  </span><br><span class="line">//加法函数，用来得到精确的加法结果            </span><br><span class="line">//调用：add(arg1,arg2)      </span><br><span class="line">//返回值：arg1加上arg2的精确结果      </span><br><span class="line"><span class="keyword">function</span> add(arg1,arg2)&#123;   </span><br><span class="line">    var r1,r2,m;   </span><br><span class="line">    try&#123;r1=arg1.toString().split(<span class="string">"."</span>)[<span class="number">1</span>].length&#125;catch(e)&#123;r1=<span class="number">0</span>&#125;   </span><br><span class="line">    try&#123;r2=arg2.toString().split(<span class="string">"."</span>)[<span class="number">1</span>].length&#125;catch(e)&#123;r2=<span class="number">0</span>&#125;   </span><br><span class="line">    m=Math.pow(<span class="number">10</span>,Math.max(r1,r2));   </span><br><span class="line">    <span class="built_in">return</span> (arg1*m+arg2*m)/m;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>最后可以给Number类型增加相应的计算方法来方便调用。<br>这样如果你要计算 0.7 * 0.8，只需（0.7）.mul(0.8)，调用 mul 方法就可以得到准确的结果了。</p>
-<h3 id="总结">总结</h3><ul>
-<li>尽量不要用 js 进行复杂的运算，特别是浮点数的运算。</li>
-<li>如果一定要进行浮点数运算，先将浮点数转化为整型，再运算。</li>
-</ul>
+        <span itemprop="articleBody"><p>作为一个以前没有接触过后台开发的前端，我终于把上次提到的笔记本销售网站完成的差不多了，接下来面临的一个问题就是如何将我的web项目部署到服务器上。<br>在网上查了一些教程之后，我决定用阿里云的学生优惠的服务器，系统是centOS5.4，虽然以前用过Linux系统，对命令行操作有所了解，但是在下载很多软件的时候确实也有点头疼，所以我决定把部署过程记录下来。</p>
+<h3 id="配置服务器环境">配置服务器环境</h3><p>首先我们拿到了服务器后我们登录阿里云去连接服务器，在这里我使用的是Xshell去登录服务器(当然你要先去阿里云控制台把云服务器启动)。<br>下载安装完Xshell后，打开新建会话，配置如下图：<br><img src="/images/20160601/1.png" alt=""><br>接下来点到用户身份验证<br><img src="/images/20160601/2.png" alt=""><br>登入成功后，就是熟悉的命令行操作了，我就不贴图了。<br>我们先将yum更新<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y update</span><br></pre></td></tr></table></figure></p>
+<p>然后，我们将使用最新源代码构建Node.js，要进行软件的安装，需要一组用来编译源代码的开发工具：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y groupinstall <span class="string">"Development Tools"</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="安装node-js">安装node.js</h3><p>首先，先找一个安装位置，我安装在 /usr/src文件夹内<br>接下来从Node.js站点获取压缩档源代码，解压文件，并进入文件夹。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget http://nodejs.org/dist/v0.<span class="number">10.18</span>/node-v0.<span class="number">10.18</span>.tar.gz </span><br><span class="line">tar zxf node-v0.<span class="number">10.18</span>.tar.gz </span><br><span class="line"><span class="built_in">cd</span> node-v0.<span class="number">10.18</span></span><br></pre></td></tr></table></figure></p>
+<p>然后执行配置脚本进行编译预处理<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./configure</span><br></pre></td></tr></table></figure></p>
+<p>开始编译源代码<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make</span><br></pre></td></tr></table></figure></p>
+<p>当编译完成后，我们需要使之在系统范围内可用, 编译后的二进制文件将被放置到系统路径，默认情况下，Node二进制文件应该放在/user/local/bin/node文件夹下:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make install</span><br></pre></td></tr></table></figure></p>
+<p>现在已经安装了Node.js，可以开始部署你的应用了，在部署前你需要先下载你所需要的模块，Express Mongoose等。<br>建立超级链接，否则sudo node时会报”command not found”(好吧其实我也不太懂这块是干嘛。)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo ln <span class="operator">-s</span> /usr/<span class="built_in">local</span>/bin/node /usr/bin/node </span><br><span class="line">sudo ln <span class="operator">-s</span> /usr/<span class="built_in">local</span>/lib/node /usr/lib/node </span><br><span class="line">sudo ln <span class="operator">-s</span> /usr/<span class="built_in">local</span>/bin/npm /usr/bin/npm </span><br><span class="line">sudo ln <span class="operator">-s</span> /usr/<span class="built_in">local</span>/bin/node-waf /usr/bin/node-waf </span><br><span class="line">sudo ln <span class="operator">-s</span> /usr/<span class="built_in">local</span>/bin/forever /usr/bin/forever</span><br></pre></td></tr></table></figure></p>
+<h3 id="安装mongodb">安装mongodb</h3><p>因为我的这个项目使用的是mongodb，所以要配置好mongodb。<br>我安装在/usr/local文件夹下，进入文件夹下载源码:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span></span><br><span class="line">wget http://fastdl.mongodb.org/linux/mongodb-linux-x86_64-<span class="number">2.4</span>.<span class="number">9</span>.tgz</span><br></pre></td></tr></table></figure></p>
+<p>解压安装包，重命名文件夹为mongodb<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar zxvf mongodb-linux-x86_64-<span class="number">2.4</span>.<span class="number">9</span>.tgz </span><br><span class="line">mv mongodb-linux-x86_64-<span class="number">2.4</span>.<span class="number">9</span> mongodb</span><br></pre></td></tr></table></figure></p>
+<p>在var文件夹里建立mongodb文件夹，并分别建立文件夹data用于存放数据，logs用于存放日志<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir /var/mongodb</span><br><span class="line">mkdir /var/mongodb/data</span><br><span class="line">mkdir /var/mongodb/logs</span><br></pre></td></tr></table></figure></p>
+<p>将mongodb启动命令追加到本文件中，让mongodb开机自启动：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/<span class="built_in">local</span>/mongodb/bin/mongod --dbpath=/var/mongodb/data --logpath /var/mongodb/logs/log.log -fork</span><br></pre></td></tr></table></figure></p>
+<p>看到这些则说明成功启动。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">forked process: <span class="number">18394</span></span><br><span class="line">all output going to: /var/mongodb/logs/log.log</span><br></pre></td></tr></table></figure></p>
+<h3 id="上传项目文件">上传项目文件</h3><p>我是用的是Xftp,下载完成后，启动并新建会话,配置如下:<br><img src="/images/20160601/3.png" alt=""><br>登入成功即可传输文件。<br><img src="/images/20160601/4.png" alt=""></p>
+<h3 id="启动项目">启动项目</h3><p>最后所有软件都配置好后，进入项目文件夹，启动项目，大功告成！<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm start</span><br></pre></td></tr></table></figure></p>
+<p>(就是服务器数据我得重新导入，心好累。。)</p>
 </span>
       
     </div>
@@ -308,9 +319,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Javascript/" rel="tag">#Javascript</a>
-          
-            <a href="/tags/前端/" rel="tag">#前端</a>
+            <a href="/tags/技术/" rel="tag">#技术</a>
           
         </div>
       
@@ -319,17 +328,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/11/09/这样去写你的HTML/" rel="next" title="这样去写你的HTML">
-                <i class="fa fa-chevron-left"></i> 这样去写你的HTML
+              <a href="/2016/04/27/使用Express与MongoDB建立一个网站后台（1）/" rel="next" title="使用Express与MongoDB建立一个网站后台（1）">
+                <i class="fa fa-chevron-left"></i> 使用Express与MongoDB建立一个网站后台（1）
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/11/14/程序员必知的前端进化史/" rel="prev" title="程序员必知的前端进化史">
-                程序员必知的前端进化史 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -356,8 +361,8 @@
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/11/10/Javascript浮点数运算问题/"
-           data-title="Javascript浮点数运算问题" data-url="http://liuzhenkn.gitHub.io/2015/11/10/Javascript浮点数运算问题/">
+      <div class="ds-thread" data-thread-key="2016/06/01/在阿里云部署node.js项目/"
+           data-title="在阿里云部署node.js项目" data-url="http://liuzhenkn.gitHub.io/2016/06/01/在阿里云部署node.js项目/">
       </div>
     
   </div>
@@ -488,7 +493,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#浮点数精确计算"><span class="nav-number">1.</span> <span class="nav-text">浮点数精确计算</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#解决方法"><span class="nav-number">1.1.</span> <span class="nav-text">解决方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">2.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置服务器环境"><span class="nav-number">1.</span> <span class="nav-text">配置服务器环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装node-js"><span class="nav-number">2.</span> <span class="nav-text">安装node.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装mongodb"><span class="nav-number">3.</span> <span class="nav-text">安装mongodb</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#上传项目文件"><span class="nav-number">4.</span> <span class="nav-text">上传项目文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动项目"><span class="nav-number">5.</span> <span class="nav-text">启动项目</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

@@ -56,17 +56,17 @@
 <meta name="description" content="本学期学习软件工程这门课程，所以老师要求分组完成一个项目————联想笔记本电脑销售网站，由于我们小组没有了解网站后台技术的同学，所以我就打算使用Node.js建立网站后台，数据库使用mongodb，在学习了一段时间之后，我将最近学习到的知识总结下来。
 什么是ExpressExpress 是一个基于 Node.js 平台的极简、灵活的 web 应用开发框架，它提供一系列强大的特性，帮助你创建各种 W">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用Express与MongoDB建立一个网站后台">
-<meta property="og:url" content="http://liuzhenkn.gitHub.io/2016/04/27/使用Express与MongoDB建立一个网站后台/index.html">
+<meta property="og:title" content="使用Express与MongoDB建立一个网站后台（1）">
+<meta property="og:url" content="http://liuzhenkn.gitHub.io/2016/04/27/使用Express与MongoDB建立一个网站后台（1）/index.html">
 <meta property="og:site_name" content="执凉's blog">
 <meta property="og:description" content="本学期学习软件工程这门课程，所以老师要求分组完成一个项目————联想笔记本电脑销售网站，由于我们小组没有了解网站后台技术的同学，所以我就打算使用Node.js建立网站后台，数据库使用mongodb，在学习了一段时间之后，我将最近学习到的知识总结下来。
 什么是ExpressExpress 是一个基于 Node.js 平台的极简、灵活的 web 应用开发框架，它提供一系列强大的特性，帮助你创建各种 W">
 <meta property="og:image" content="http://liuzhenkn.gitHub.io/images/20160426/1.png">
 <meta property="og:image" content="http://liuzhenkn.gitHub.io/images/20160426/2.png">
 <meta property="og:image" content="http://liuzhenkn.gitHub.io/images/20160426/3.png">
-<meta property="og:updated_time" content="2016-04-26T12:17:21.301Z">
+<meta property="og:updated_time" content="2016-06-01T08:00:16.665Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用Express与MongoDB建立一个网站后台">
+<meta name="twitter:title" content="使用Express与MongoDB建立一个网站后台（1）">
 <meta name="twitter:description" content="本学期学习软件工程这门课程，所以老师要求分组完成一个项目————联想笔记本电脑销售网站，由于我们小组没有了解网站后台技术的同学，所以我就打算使用Node.js建立网站后台，数据库使用mongodb，在学习了一段时间之后，我将最近学习到的知识总结下来。
 什么是ExpressExpress 是一个基于 Node.js 平台的极简、灵活的 web 应用开发框架，它提供一系列强大的特性，帮助你创建各种 W">
 
@@ -80,7 +80,7 @@
   };
 </script>
 
-  <title> 使用Express与MongoDB建立一个网站后台 | 执凉's blog </title>
+  <title> 使用Express与MongoDB建立一个网站后台（1） | 执凉's blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -239,7 +239,7 @@
             
             
               
-                使用Express与MongoDB建立一个网站后台
+                使用Express与MongoDB建立一个网站后台（1）
               
             
           </h1>
@@ -274,8 +274,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/04/27/使用Express与MongoDB建立一个网站后台/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/27/使用Express与MongoDB建立一个网站后台/" itemprop="commentsCount"></span>
+                <a href="/2016/04/27/使用Express与MongoDB建立一个网站后台（1）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/27/使用Express与MongoDB建立一个网站后台（1）/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -299,6 +299,21 @@
 <h3 id="安装Express">安装Express</h3><p>假定我们已经安装好了Node.js,接下来我们需要为我们的应用创建一个目录。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install express -g</span><br><span class="line">express sale</span><br></pre></td></tr></table></figure></p>
 <p>执行完后会在默认位置产生一个sale项目，里面的结构如下：<br><img src="/images/20160426/1.png" alt=""><br>接下来我们进入这个文件夹，启动这个项目：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> sales</span><br><span class="line">npm start</span><br></pre></td></tr></table></figure></p>
 <p>如果发生错误缺少module,我们只需使用npm install 命令挨个再下载下来就好。<br>成功就会显示这样：<br><img src="/images/20160426/2.png" alt=""><br>然后我们访问127.0.0.1:3000(默认端口3000)，如果显示是这样就说明你成功了：<br><img src="/images/20160426/3.png" alt=""><br>是不是很简单？</p>
+<h3 id="了解几个概念">了解几个概念</h3><p>在使用Express之前,我们需要了解几个概念—————路由、中间件。</p>
+<h4 id="路由">路由</h4><p>路由是指如何定义应用的端点（URIs）以及如何响应客户端的请求。</p>
+<p>路由是由一个URI、HTTP 请求(GET、POST等)和若干个句柄组成，它的结构如下:app.METHOD(path, [callback…], callback),app是express 对象的一个实例,METHOD是一个HTTP请求方法,path是服务器上的路径,callback 是当路由匹配时要执行的函数。例如:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var express = require(<span class="string">'express'</span>);</span><br><span class="line">var app = express();</span><br><span class="line">// GET method route</span><br><span class="line">app.get(<span class="string">'/'</span>, <span class="keyword">function</span> (req, res) &#123;</span><br><span class="line">  res.send(<span class="string">'GET request to the homepage'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// POST method route</span><br><span class="line">app.post(<span class="string">'/'</span>, <span class="keyword">function</span> (req, res) &#123;</span><br><span class="line">  res.send(<span class="string">'POST request to the homepage'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<h4 id="中间件">中间件</h4><p>Express 是一个自身功能极简，完全是由路由和中间件构成一个的 web 开发框架：从本质上来说，一个 Express 应用就是在调用各种中间件。<br>中间件(Middleware)是一个函数，它可以访问请求对象(request object (req)), 响应对象(response object (res)), 和 web 应用中处于请求-响应循环流程中的中间件，一般被命名为 next 的变量。<br>中间件的功能包括：</p>
+<pre><code>执行任何代码。
+修改请求和响应对象。
+终结请求-响应循环。
+调用堆栈中的下一个中间件。
+</code></pre><p>如果当前中间件没有终结请求-响应循环，则必须调用 next() 方法将控制权交给下一个中间件，否则请求就会挂起。<br>Express 应用可使用如下几种中间件：</p>
+<pre><code>应用级中间件
+路由级中间件
+错误处理中间件
+内置中间件
+第三方中间件
+</code></pre><p>使用可选则挂载路径，可在应用级别或路由级别装载中间件。另外，你还可以同时装在一系列中间件函数，从而在一个挂载点上创建一个子中间件栈。<br>在这里我们只看应用级中间件和路由级中间件。</p>
 </span>
       
     </div>
@@ -326,6 +341,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2016/06/01/在阿里云部署node.js项目/" rel="prev" title="在阿里云部署node.js项目">
+                在阿里云部署node.js项目 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -351,8 +370,8 @@
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/04/27/使用Express与MongoDB建立一个网站后台/"
-           data-title="使用Express与MongoDB建立一个网站后台" data-url="http://liuzhenkn.gitHub.io/2016/04/27/使用Express与MongoDB建立一个网站后台/">
+      <div class="ds-thread" data-thread-key="2016/04/27/使用Express与MongoDB建立一个网站后台（1）/"
+           data-title="使用Express与MongoDB建立一个网站后台（1）" data-url="http://liuzhenkn.gitHub.io/2016/04/27/使用Express与MongoDB建立一个网站后台（1）/">
       </div>
     
   </div>
@@ -396,7 +415,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">13</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -410,7 +429,7 @@
 
           <div class="site-state-item site-state-tags">
             
-              <span class="site-state-item-count">16</span>
+              <span class="site-state-item-count">17</span>
               <span class="site-state-item-name">标签</span>
               
           </div>
@@ -483,7 +502,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是Express"><span class="nav-number">1.</span> <span class="nav-text">什么是Express</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Express"><span class="nav-number">2.</span> <span class="nav-text">安装Express</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是Express"><span class="nav-number">1.</span> <span class="nav-text">什么是Express</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Express"><span class="nav-number">2.</span> <span class="nav-text">安装Express</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#了解几个概念"><span class="nav-number">3.</span> <span class="nav-text">了解几个概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#路由"><span class="nav-number">3.1.</span> <span class="nav-text">路由</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#中间件"><span class="nav-number">3.2.</span> <span class="nav-text">中间件</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
